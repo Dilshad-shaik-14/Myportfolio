@@ -1,0 +1,59 @@
+@import "tailwindcss";
+@import "github-markdown-css/github-markdown.css";
+.markdown-body img {
+  display: inline-block;
+  margin: 8px;
+  vertical-align: middle;
+  max-width: 40px;
+  height: auto;
+}
+.html {
+  scroll-behavior: smooth;
+}
+/* Tailwind custom global styles or your CSS file */
+
+.markdown-body {
+  color: inherit;
+  font-size: 1rem;
+  line-height: 1.75;
+}
+
+.markdown-body h1, .markdown-body h2 {
+  font-weight: bold;
+}
+
+.custom-scroll::-webkit-scrollbar {
+  width: 6px;
+}
+.custom-scroll::-webkit-scrollbar-thumb {
+  background-color: rgba(59, 130, 246, 0.4); /* blue-500 */
+  border-radius: 9999px;
+}
+.custom-scroll::-webkit-scrollbar-track {
+  background: transparent;
+}
+/* styles.css or globals.css */
+.markdown-body ul.skill-horizontal {
+  display: flex;
+  flex-wrap: wrap;
+  gap: 12px;
+  list-style: none;
+  padding-left: 0;
+  margin-top: 1rem;
+}
+
+.markdown-body ul.skill-horizontal li {
+  background: rgba(255, 255, 255, 0.1);
+  padding: 6px 12px;
+  border-radius: 8px;
+  font-size: 0.9rem;
+  color: #1e293b;
+  white-space: nowrap;
+  border: 1px solid rgba(0, 0, 0, 0.1);
+}
+.dark .markdown-body ul.skill-horizontal li {
+  color: #f1f5f9;
+  border-color: rgba(255, 255, 255, 0.2);
+}
+
+
