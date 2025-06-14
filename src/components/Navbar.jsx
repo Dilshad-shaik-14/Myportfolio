@@ -13,7 +13,7 @@ export default function Navbar() {
     return () => window.removeEventListener("scroll", handleScroll);
   }, []);
 
-  const navItems = ["hero", "about", "skills", "projects", "TimeLine", "Github", "contact"];
+  const navItems = ["Home", "about", "skills", "projects", "TimeLine", "Github", "contact"];
 
   const navVariants = {
     hidden: { opacity: 0, y: -20 },
