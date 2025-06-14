@@ -44,6 +44,7 @@ export default function Hero() {
 
         <p className="mt-6 text-black/60 dark:text-white/60 text-base sm:text-lg">
           I create robust web experiences using clean code and sharp UI/UX.
+          Passionate about building scalable applications and contributing to open-source projects.
         </p>
 
         <div className="mt-8">
