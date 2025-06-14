@@ -6,6 +6,7 @@ import s4 from "../assets/s4.png";
 import s5 from "../assets/s5.png";
 import s6 from "../assets/s6.png";
 import React from "react";
+
 const projects = [
   {
     title: "YouTube+Twitter Hybrid App",
@@ -37,16 +38,16 @@ const projects = [
     img: s3,
     github: "https://github.com/Dilshad-shaik-14/ticktaktoe",
   },
-   {
+  {
     title: "GlassMorphism login page",
-    desc: "a simple login page with glassmorphism effect",
+    desc: "A simple login page with glassmorphism effect",
     stack: ["React", "tailwindCSS"],
     img: s4,
     github: "https://github.com/Dilshad-shaik-14/login_out",
   },
   {
-    title: "Cronicle Cave App",
-    desc: "React + Express CRUD app with authentication and filtering.",
+    title: "Password Saver",
+    desc: "React + Express CRUD app with localStorage password management.",
     stack: ["React", "Express", "MongoDB"],
     img: s6,
     github: "https://github.com/Dilshad-shaik-14/react_password",
@@ -57,30 +58,30 @@ export default function Projects() {
   return (
     <section
       id="projects"
-      className="relative z-10 px-6 pt-24 pb-32 md:px-16 bg-gradient-to-br from-white to-gray-100 dark:from-black dark:to-neutral-900 text-black dark:text-white overflow-hidden"
+      className="relative z-10 px-4 sm:px-6 md:px-16 pt-24 pb-32 bg-gradient-to-br from-white to-gray-100 dark:from-black dark:to-neutral-900 text-black dark:text-white"
     >
       <motion.h2
         initial={{ opacity: 0, y: 40 }}
         whileInView={{ opacity: 1, y: 0 }}
         transition={{ duration: 0.8 }}
-        className="text-4xl font-extrabold mb-20 text-center"
+        className="text-3xl sm:text-4xl font-extrabold mb-20 text-center"
       >
-        Projects
+        🚀 Projects
       </motion.h2>
 
-      <div className="grid grid-cols-1 md:grid-cols-2 xl:grid-cols-3 gap-12">
+      <div className="grid grid-cols-1 sm:grid-cols-2 xl:grid-cols-3 gap-10 md:gap-12">
         {projects.map((project, idx) => (
           <motion.div
             key={idx}
-            whileHover={{ scale: 1.03, rotate: 0.3 }}
+            whileHover={{ scale: 1.03 }}
             initial={{ opacity: 0, y: 60 }}
             whileInView={{ opacity: 1, y: 0 }}
-            transition={{ duration: 0.6, delay: idx * 0.2 }}
+            transition={{ duration: 0.6, delay: idx * 0.15 }}
             viewport={{ once: true }}
             className="bg-white/10 dark:bg-white/5 backdrop-blur-lg rounded-3xl shadow-xl p-4 overflow-hidden border border-white/10 group relative"
           >
-            {/* Project Image */}
-            <div className="rounded-xl overflow-hidden h-44 mb-4 relative">
+            {/* Image */}
+            <div className="rounded-xl overflow-hidden h-44 sm:h-48 mb-4 relative">
               <img
                 src={project.img}
                 alt={project.title}
@@ -89,13 +90,13 @@ export default function Projects() {
               <div className="absolute inset-0 bg-black/20 group-hover:bg-black/10 transition duration-500" />
             </div>
 
-            {/* Project Content */}
+            {/* Content */}
             <div className="px-2">
-              <h3 className="text-lg font-semibold mb-1">{project.title}</h3>
-              <p className="text-sm mb-3 text-gray-700 dark:text-gray-300">
+              <h3 className="text-lg sm:text-xl font-semibold mb-1">{project.title}</h3>
+              <p className="text-sm sm:text-base mb-3 text-gray-700 dark:text-gray-300">
                 {project.desc}
               </p>
-              <div className="flex flex-wrap gap-2 mb-4 text-xs">
+              <div className="flex flex-wrap gap-2 mb-4 text-xs sm:text-sm">
                 {project.stack.map((tech) => (
                   <span
                     key={tech}
@@ -110,6 +111,7 @@ export default function Projects() {
                   <a
                     href={project.live}
                     target="_blank"
+                    rel="noopener noreferrer"
                     className="text-sky-600 dark:text-sky-300 hover:underline"
                   >
                     🔗 Live
@@ -118,6 +120,7 @@ export default function Projects() {
                 <a
                   href={project.github}
                   target="_blank"
+                  rel="noopener noreferrer"
                   className="text-gray-600 dark:text-gray-300 hover:underline"
                 >
                   💻 GitHub
@@ -125,7 +128,7 @@ export default function Projects() {
               </div>
             </div>
 
-            {/* Optional Glow Effect on Hover */}
+            {/* Glow */}
             <div className="absolute top-0 left-0 w-full h-full opacity-0 group-hover:opacity-10 transition duration-500 bg-gradient-to-br from-purple-400 via-sky-400 to-transparent blur-2xl rounded-3xl z-[-1]" />
           </motion.div>
         ))}

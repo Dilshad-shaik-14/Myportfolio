@@ -1,5 +1,3 @@
-
-
 import { useRef, useState } from "react";
 import emailjs from "@emailjs/browser";
 import { toast, Toaster } from "react-hot-toast";
@@ -40,7 +38,7 @@ export default function Contact() {
   return (
     <section
       id="Contact"
-      className="min-h-screen py-24 px-6 bg-gradient-to-br from-white to-gray-100 dark:from-black dark:to-neutral-900 transition-colors duration-500"
+      className="min-h-screen py-24 px-4 sm:px-8 md:px-16 bg-gradient-to-br from-white to-gray-100 dark:from-black dark:to-neutral-900 transition-colors duration-500"
     >
       <Toaster position="top-center" />
       <motion.div
@@ -48,38 +46,39 @@ export default function Contact() {
         whileInView={{ opacity: 1, y: 0 }}
         transition={{ duration: 0.6, ease: "easeOut" }}
         viewport={{ once: true }}
-        className="max-w-2xl mx-auto glassmorphic p-10 rounded-3xl shadow-2xl border border-white/20 bg-white/20 dark:bg-white/10 backdrop-blur-md"
+        className="max-w-3xl mx-auto glassmorphic px-6 py-10 sm:px-10 sm:py-12 rounded-3xl shadow-2xl border border-white/20 bg-white/20 dark:bg-white/10 backdrop-blur-md"
       >
-        <h2 className="text-4xl font-extrabold text-center mb-8 text-gray-800 dark:text-white">
+        <h2 className="text-3xl sm:text-4xl font-extrabold text-center mb-10 text-gray-800 dark:text-white">
           Get in Touch
         </h2>
+
         <form ref={form} onSubmit={sendEmail} className="space-y-6" id="contact-form">
           <input
             type="text"
             name="from_name"
             placeholder="Your Name"
             required
-            className="w-full px-4 py-3 rounded-xl bg-white/20 dark:bg-white/10 backdrop-blur border border-gray-300 dark:border-gray-700 text-black dark:text-white placeholder-gray-600 dark:placeholder-gray-400"
+            className="w-full px-4 py-3 rounded-xl bg-white/30 dark:bg-white/10 backdrop-blur border border-gray-300 dark:border-gray-700 text-black dark:text-white placeholder-gray-600 dark:placeholder-gray-400"
           />
           <input
             type="email"
             name="from_email"
             placeholder="Your Email"
             required
-            className="w-full px-4 py-3 rounded-xl bg-white/20 dark:bg-white/10 backdrop-blur border border-gray-300 dark:border-gray-700 text-black dark:text-white placeholder-gray-600 dark:placeholder-gray-400"
+            className="w-full px-4 py-3 rounded-xl bg-white/30 dark:bg-white/10 backdrop-blur border border-gray-300 dark:border-gray-700 text-black dark:text-white placeholder-gray-600 dark:placeholder-gray-400"
           />
           <textarea
             name="message"
             placeholder="Your Message"
             rows="5"
             required
-            className="w-full px-4 py-3 rounded-xl bg-white/20 dark:bg-white/10 backdrop-blur border border-gray-300 dark:border-gray-700 text-black dark:text-white placeholder-gray-600 dark:placeholder-gray-400"
+            className="w-full px-4 py-3 rounded-xl bg-white/30 dark:bg-white/10 backdrop-blur border border-gray-300 dark:border-gray-700 text-black dark:text-white placeholder-gray-600 dark:placeholder-gray-400"
           ></textarea>
           <motion.button
-            whileTap={{ scale: 0.95 }}
+            whileTap={{ scale: 0.97 }}
             whileHover={{ scale: 1.02 }}
             type="submit"
-            className={`w-full py-3 text-white font-bold rounded-xl transition bg-blue-600 hover:bg-blue-700 ${
+            className={`w-full py-3 text-white font-semibold text-lg rounded-xl transition bg-blue-600 hover:bg-blue-700 ${
               loading ? "opacity-70 cursor-not-allowed" : ""
             }`}
             disabled={loading}
@@ -87,8 +86,10 @@ export default function Contact() {
             {loading ? "Sending..." : "Send Message"}
           </motion.button>
         </form>
+
+        {/* Social Icons */}
         <motion.div
-          className="mt-10 flex justify-center gap-8 text-2xl text-gray-700 dark:text-gray-200"
+          className="mt-10 flex flex-wrap justify-center gap-6 text-2xl text-gray-700 dark:text-gray-200"
           initial={{ opacity: 0, y: 20 }}
           whileInView={{ opacity: 1, y: 0 }}
           transition={{ delay: 0.2, duration: 0.6 }}
@@ -98,7 +99,7 @@ export default function Contact() {
             href="https://github.com/Dilshad-shaik-14"
             target="_blank"
             rel="noopener noreferrer"
-            className="hover:text-blue-500"
+            className="hover:text-blue-500 transition-colors duration-300"
           >
             <FaGithub />
           </a>
@@ -106,13 +107,13 @@ export default function Contact() {
             href="https://linkedin.com/in/dilshadsk"
             target="_blank"
             rel="noopener noreferrer"
-            className="hover:text-blue-700"
+            className="hover:text-blue-700 transition-colors duration-300"
           >
             <FaLinkedin />
           </a>
           <a
             href="mailto:dilshadshaik467@gmail.com"
-            className="hover:text-red-500"
+            className="hover:text-red-500 transition-colors duration-300"
           >
             <FaEnvelope />
           </a>

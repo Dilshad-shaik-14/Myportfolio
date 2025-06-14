@@ -1,6 +1,7 @@
 import { useEffect, useState } from "react";
 import { Link } from "react-scroll";
 import { motion } from "framer-motion";
+import { FaHome, FaUserAlt, FaTools, FaProjectDiagram, FaClock, FaGithub, FaEnvelope } from "react-icons/fa";
 
 export default function Navbar() {
   const [isScrolled, setIsScrolled] = useState(false);
@@ -13,7 +14,15 @@ export default function Navbar() {
     return () => window.removeEventListener("scroll", handleScroll);
   }, []);
 
-  const navItems = ["Home", "about", "skills", "projects", "TimeLine", "Github", "contact"];
+  const navItems = [
+    { id: "Home", icon: <FaHome />, label: "Home" },
+    { id: "about", icon: <FaUserAlt />, label: "About" },
+    { id: "skills", icon: <FaTools />, label: "Skills" },
+    { id: "projects", icon: <FaProjectDiagram />, label: "Projects" },
+    { id: "timeline", icon: <FaClock />, label: "Timeline" },
+    { id: "github", icon: <FaGithub />, label: "GitHub" },
+    { id: "contact", icon: <FaEnvelope />, label: "Contact" },
+  ];
 
   const navVariants = {
     hidden: { opacity: 0, y: -20 },
@@ -27,7 +36,9 @@ export default function Navbar() {
   return (
     <header
       className={`fixed top-0 left-0 w-full z-50 transition-all duration-500 ease-in-out ${
-        isScrolled ? "backdrop-blur-2xl bg-white/30 dark:bg-black/20 shadow-xl scale-[1.01]" : "bg-transparent"
+        isScrolled
+          ? "backdrop-blur-2xl bg-white/30 dark:bg-black/20 shadow-xl scale-[1.01]"
+          : "bg-transparent"
       }`}
     >
       <motion.nav
@@ -37,12 +48,11 @@ export default function Navbar() {
         className="max-w-6xl mx-auto px-6 py-4 mt-5 flex justify-center items-center rounded-3xl
         bg-white/20 dark:bg-white/5 backdrop-blur-xl border border-white/40 dark:border-white/10
         shadow-[0_8px_32px_rgba(31,38,135,0.25)] hover:shadow-[0_12px_48px_rgba(0,0,0,0.3)]"
-        style={{ border: "1px solid rgba(255, 255, 255, 0.2)" }}
       >
-        <ul className="flex space-x-8 md:space-x-12 text-[17px] font-semibold tracking-wide">
+        <ul className="flex space-x-6 md:space-x-10 text-[17px] font-semibold tracking-wide">
           {navItems.map((item, i) => (
             <motion.li
-              key={item}
+              key={item.id}
               custom={i}
               initial="hidden"
               animate="visible"
@@ -55,21 +65,20 @@ export default function Navbar() {
               className="cursor-pointer relative group"
             >
               <Link
-                to={item}
+                to={item.id}
                 smooth={true}
                 duration={500}
                 offset={-80}
-                activeClass="active-link"
                 spy={true}
-                className="capitalize text-black dark:text-white transition-colors"
+                activeClass="active-link"
+                className="flex flex-col md:flex-row items-center gap-1 capitalize text-black dark:text-white transition-colors"
               >
-                {item}
+                <span className="text-xl">{item.icon}</span>
+                <span className="hidden md:inline">{item.label}</span>
               </Link>
 
               {/* Underline animation */}
-              <span
-                className="absolute bottom-[-4px] left-0 w-0 h-[2px] bg-sky-500 group-hover:w-full transition-all duration-300"
-              />
+              <span className="absolute bottom-[-4px] left-0 w-0 h-[2px] bg-sky-500 group-hover:w-full transition-all duration-300" />
             </motion.li>
           ))}
         </ul>

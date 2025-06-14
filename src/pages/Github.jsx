@@ -3,6 +3,7 @@ import ReactMarkdown from "react-markdown";
 import rehypeRaw from "rehype-raw";
 import remarkGfm from "remark-gfm";
 import "github-markdown-css";
+import { motion } from "framer-motion";
 
 export default function GitHubProfileReadme() {
   const [readme, setReadme] = useState("");
@@ -21,14 +22,8 @@ export default function GitHubProfileReadme() {
       });
   }, []);
 
-  if (error)
-    return <div className="text-red-500 text-center mt-10">{error}</div>;
-  if (!readme)
-    return (
-      <div className="text-center text-gray-600 dark:text-gray-300 mt-10">
-        Loading README...
-      </div>
-    );
+  if (error) return <div className="text-red-500 text-center mt-10">{error}</div>;
+  if (!readme) return <div className="text-center text-gray-600 dark:text-gray-300 mt-10">Loading README...</div>;
 
   return (
     <section
@@ -36,7 +31,7 @@ export default function GitHubProfileReadme() {
       className="pt-24 min-h-screen px-6 md:px-20 bg-gradient-to-br from-white to-gray-200 dark:from-black dark:to-neutral-900 text-black dark:text-white transition duration-500"
     >
       <div className="grid grid-cols-1 md:grid-cols-3 gap-10 max-w-7xl mx-auto">
-        {/* LEFT COLUMN */}
+        {/* LEFT PANEL */}
         <div className="md:col-span-1 bg-white/30 dark:bg-white/10 backdrop-blur-xl p-6 rounded-3xl border border-white/20 shadow-lg flex flex-col items-center gap-4">
           <img
             src="https://avatars.githubusercontent.com/u/103246099?v=4"
@@ -55,24 +50,43 @@ export default function GitHubProfileReadme() {
           >
             @Dilshad-shaik-14
           </a>
+
+          {/* GitHub Stats */}
           <img
             src={`https://github-readme-stats.vercel.app/api?username=Dilshad-shaik-14&show_icons=true&theme=transparent&hide_title=true`}
             alt="GitHub Stats"
             className="w-full rounded-xl mt-4"
           />
+
+          {/* Contribution Heatmap */}
+          <img
+            src={`https://ghchart.rshah.org/2196f3/Dilshad-shaik-14`}
+            alt="GitHub Contribution Chart"
+            className="w-full mt-4 border rounded-lg shadow-sm"
+          />
+
+          {/* Tech Stack Badges */}
+          <div className="mt-6 flex flex-wrap justify-center gap-2">
+            <img src="https://img.shields.io/badge/React-20232A?style=for-the-badge&logo=react&logoColor=61DAFB" />
+            <img src="https://img.shields.io/badge/Node.js-339933?style=for-the-badge&logo=nodedotjs&logoColor=white" />
+            <img src="https://img.shields.io/badge/Express-000000?style=for-the-badge&logo=express&logoColor=white" />
+            <img src="https://img.shields.io/badge/MongoDB-4DB33D?style=for-the-badge&logo=mongodb&logoColor=white" />
+            <img src="https://img.shields.io/badge/TailwindCSS-06B6D4?style=for-the-badge&logo=tailwindcss&logoColor=white" />
+          </div>
         </div>
 
-        {/* RIGHT COLUMN */}
-       <div className="md:col-span-2 overflow-auto max-h-[80vh] scroll-pb-16 pb-16 p-8 rounded-3xl bg-white/40 dark:bg-white/10 backdrop-blur-lg border border-white/20 shadow-xl custom-scroll">
-  <div className="markdown-body w-full">
-    <ReactMarkdown
-      rehypePlugins={[rehypeRaw]}
-      remarkPlugins={[remarkGfm]}
-    >
-      {readme}
-    </ReactMarkdown>
-  </div>
-</div>
+        {/* RIGHT PANEL - Animated Markdown */}
+        <motion.div
+          className="md:col-span-2 overflow-auto max-h-[80vh] scroll-pb-16 pb-16 p-8 rounded-3xl bg-white/40 dark:bg-white/10 backdrop-blur-lg border border-white/20 shadow-xl custom-scroll markdown-body"
+          initial={{ opacity: 0, y: 50 }}
+          whileInView={{ opacity: 1, y: 0 }}
+          transition={{ duration: 0.9 }}
+          viewport={{ once: true }}
+        >
+          <ReactMarkdown rehypePlugins={[rehypeRaw]} remarkPlugins={[remarkGfm]}>
+            {readme}
+          </ReactMarkdown>
+        </motion.div>
       </div>
     </section>
   );

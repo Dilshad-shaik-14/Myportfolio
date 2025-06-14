@@ -35,7 +35,7 @@ export default function Skills() {
   return (
     <section
       id="skills"
-      className="min-h-screen pt-24 pb-20 px-6 md:px-16 bg-gradient-to-br from-white to-gray-200 dark:from-black dark:to-neutral-900 text-black dark:text-white transition-colors duration-500"
+      className="min-h-screen pt-24 pb-20 px-4 sm:px-6 md:px-16 bg-gradient-to-br from-white to-gray-200 dark:from-black dark:to-neutral-900 text-black dark:text-white"
     >
       <motion.div
         initial={{ opacity: 0, y: 40 }}
@@ -44,15 +44,17 @@ export default function Skills() {
         transition={{ duration: 0.8 }}
         className="max-w-7xl mx-auto text-center"
       >
-        <h2 className="text-4xl md:text-5xl font-bold mb-12">My Skills</h2>
+        <h2 className="text-3xl sm:text-4xl md:text-5xl font-bold mb-12">
+          🚀 My Skills
+        </h2>
 
-        <div className="grid grid-cols-1 sm:grid-cols-2 md:grid-cols-3 xl:grid-cols-4 gap-6">
+        <div className="grid grid-cols-2 sm:grid-cols-3 md:grid-cols-4 xl:grid-cols-5 gap-4 sm:gap-6 md:gap-8">
           {skills.map(({ icon, label, color }) => (
             <motion.div
               key={label}
-              whileHover={{ scale: 1.06, rotate: 0.5 }}
-              transition={{ type: "spring", stiffness: 250 }}
-              className={`flex items-center gap-4 px-6 py-4 rounded-3xl shadow-xl text-white font-medium text-base backdrop-blur-xl bg-gradient-to-r ${color} transition-all duration-300`}
+              whileHover={{ scale: 1.07, rotate: 0.5 }}
+              transition={{ type: "spring", stiffness: 300 }}
+              className={`flex items-center gap-3 sm:gap-4 px-4 sm:px-6 py-3 sm:py-4 rounded-3xl shadow-xl text-white font-medium text-sm sm:text-base backdrop-blur-xl bg-gradient-to-r ${color} transition-all duration-300`}
             >
               <div className="text-white">{icon}</div>
               <span className="whitespace-nowrap">{label}</span>
