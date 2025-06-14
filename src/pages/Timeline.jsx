@@ -34,9 +34,9 @@ const timeline = [
   },
   {
     year: "2024",
-    event: "Completed Full Stack Development Course",
+    event: "Completed Full Stack Development",
     description:
-      "Successfully completed a comprehensive full-stack development course, gaining expertise in both frontend and backend technologies.",
+      "Successfully completed a comprehensive full-stack development , gaining expertise in both frontend and backend technologies.",
     icon: <FaCertificate className="text-orange-500 text-lg" />
   },
   {
