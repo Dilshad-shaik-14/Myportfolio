@@ -17,7 +17,7 @@ const projects = [
   },
   {
     title: "Cronicle Cave App",
-    desc: "React + Express CRUD app with authentication and filtering.",
+    desc: "React + Appwrite CRUD app with authentication and filtering.",
     stack: ["React", "Express", "MongoDB"],
     img: s1,
     live: "https://full-stack-01.vercel.app",
@@ -47,8 +47,8 @@ const projects = [
   },
   {
     title: "Password Saver",
-    desc: "React + Express CRUD app with localStorage password management.",
-    stack: ["React", "Express", "MongoDB"],
+    desc: "React app with localStorage password management.",
+    stack: ["React", "tailwindCSS"],
     img: s6,
     github: "https://github.com/Dilshad-shaik-14/react_password",
   },

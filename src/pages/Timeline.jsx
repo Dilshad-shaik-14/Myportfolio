@@ -32,10 +32,9 @@ const timeline = [
   },
   {
     year: "2024",
-    event: "Contributed to Open Source Projects",
-    description:
-      "Became an active open-source contributor, collaborating on various projects to enhance my skills and give back to the community.",
-    icon: <FaCode className="text-yellow-500 text-lg" />,
+    event: "started mastering React ",
+    description:"Focused on mastering React.js, enhancing my skills in building interactive and responsive user interfaces.",
+    icon: <FaProjectDiagram className="text-red-600 text-lg" />,
   },
   {
     year: "2024",
@@ -82,7 +81,7 @@ export default function TimelinePage() {
         <motion.div
           initial={{ height: 0 }}
           animate={{ height: inView ? "100%" : 0 }}
-          transition={{ duration: 2, ease: "easeInOut" }}
+          transition={{ duration: 2, ease: "circInOut" }}
           className="hidden md:block absolute left-1/2 transform -translate-x-1 w-1 bg-gradient-to-b from-sky-500 via-blue-400 to-sky-600 dark:from-sky-300 dark:via-blue-400 dark:to-blue-500 shadow-[0_0_20px_rgba(56,189,248,0.7)] rounded-full z-0"
         />
 
@@ -96,7 +95,7 @@ export default function TimelinePage() {
                 initial={{ opacity: 0, x: isLeft ? -60 : 60 }}
                 whileInView={{ opacity: 1, x: 0 }}
                 viewport={{ once: true }}
-                transition={{ duration: 0.6, delay: index * 0.2 }}
+                transition={{ duration: 0.6, delay: index * 0.1 }}
                 className={`relative flex flex-col md:flex-row items-center md:items-start ${
                   isLeft ? "md:justify-start" : "md:justify-end"
                 }`}
