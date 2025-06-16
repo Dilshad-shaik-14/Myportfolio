@@ -1,15 +1,23 @@
 import { useEffect, useState } from "react";
 import { Link } from "react-scroll";
-import { motion } from "framer-motion";
-import { FaHome, FaUserAlt, FaTools, FaProjectDiagram, FaClock, FaGithub, FaEnvelope } from "react-icons/fa";
+import { motion, AnimatePresence } from "framer-motion";
+import {
+  FaHome,
+  FaUserAlt,
+  FaTools,
+  FaProjectDiagram,
+  FaClock,
+  FaGithub,
+  FaEnvelope,
+} from "react-icons/fa";
+import { HiOutlineMenuAlt3, HiOutlineX } from "react-icons/hi";
 
 export default function Navbar() {
   const [isScrolled, setIsScrolled] = useState(false);
+  const [isMenuOpen, setIsMenuOpen] = useState(false);
 
   useEffect(() => {
-    const handleScroll = () => {
-      setIsScrolled(window.scrollY > 50);
-    };
+    const handleScroll = () => setIsScrolled(window.scrollY > 50);
     window.addEventListener("scroll", handleScroll);
     return () => window.removeEventListener("scroll", handleScroll);
   }, []);
@@ -24,15 +32,6 @@ export default function Navbar() {
     { id: "contact", icon: <FaEnvelope />, label: "Contact" },
   ];
 
-  const navVariants = {
-    hidden: { opacity: 0, y: -20 },
-    visible: (i) => ({
-      opacity: 1,
-      y: 0,
-      transition: { delay: i * 0.05, duration: 0.4, ease: "easeOut" },
-    }),
-  };
-
   return (
     <header
       className={`fixed top-0 left-0 w-full z-50 transition-all duration-500 ease-in-out ${
@@ -41,22 +40,15 @@ export default function Navbar() {
           : "bg-transparent"
       }`}
     >
-      <motion.nav
-        initial={{ y: -50, opacity: 0 }}
-        animate={{ y: 0, opacity: 1 }}
-        transition={{ type: "spring", stiffness: 120, damping: 12 }}
-        className="max-w-6xl mx-auto px-6 py-4 mt-5 flex justify-center items-center rounded-3xl
-        bg-white/20 dark:bg-white/5 backdrop-blur-xl border border-white/40 dark:border-white/10
-        shadow-[0_8px_32px_rgba(31,38,135,0.25)] hover:shadow-[0_12px_48px_rgba(0,0,0,0.3)]"
-      >
-        <ul className="flex space-x-6 md:space-x-10 text-[17px] font-semibold tracking-wide">
+      <div className="max-w-6xl mx-auto flex justify-between items-center px-6 py-4 md:py-6">
+        {/* Logo */}
+        <div className="text-xl font-bold text-black dark:text-white">Portfolio</div>
+
+        {/* Desktop Nav */}
+        <ul className="hidden md:flex space-x-6 text-[16px] font-medium">
           {navItems.map((item, i) => (
             <motion.li
               key={item.id}
-              custom={i}
-              initial="hidden"
-              animate="visible"
-              variants={navVariants}
               whileHover={{
                 scale: 1.1,
                 color: "#0ea5e9",
@@ -71,18 +63,55 @@ export default function Navbar() {
                 offset={-80}
                 spy={true}
                 activeClass="active-link"
-                className="flex flex-col md:flex-row items-center gap-1 capitalize text-black dark:text-white transition-colors"
+                className="flex items-center gap-1 capitalize text-black dark:text-white"
               >
-                <span className="text-xl">{item.icon}</span>
-                <span className="hidden md:inline">{item.label}</span>
+                <span className="text-lg">{item.icon}</span>
+                <span>{item.label}</span>
               </Link>
-
-              {/* Underline animation */}
               <span className="absolute bottom-[-4px] left-0 w-0 h-[2px] bg-sky-500 group-hover:w-full transition-all duration-300" />
             </motion.li>
           ))}
         </ul>
-      </motion.nav>
+
+        {/* Modern Icon Toggle */}
+        <div className="md:hidden text-3xl text-black dark:text-white">
+          <button onClick={() => setIsMenuOpen(!isMenuOpen)}>
+            {isMenuOpen ? <HiOutlineX /> : <HiOutlineMenuAlt3 />}
+          </button>
+        </div>
+      </div>
+
+      {/* Mobile Slide-In Menu */}
+      <AnimatePresence>
+        {isMenuOpen && (
+          <motion.div
+            initial={{ x: "100%" }}
+            animate={{ x: 0 }}
+            exit={{ x: "100%" }}
+            transition={{ type: "tween", duration: 0.3 }}
+            className="fixed top-0 right-0 h-screen w-72 sm:w-80 bg-white dark:bg-zinc-900/90 shadow-lg z-50 backdrop-blur-md border-l border-gray-300 dark:border-white/10"
+          >
+            <ul className="flex flex-col mt-24 px-8 space-y-6 text-lg font-medium text-black dark:text-white">
+              {navItems.map((item) => (
+                <li key={item.id}>
+                  <Link
+                    to={item.id}
+                    smooth={true}
+                    duration={500}
+                    offset={-80}
+                    spy={true}
+                    onClick={() => setIsMenuOpen(false)}
+                    className="flex items-center gap-3 hover:text-sky-500 transition-all"
+                  >
+                    <span className="text-xl">{item.icon}</span>
+                    <span>{item.label}</span>
+                  </Link>
+                </li>
+              ))}
+            </ul>
+          </motion.div>
+        )}
+      </AnimatePresence>
     </header>
   );
 }

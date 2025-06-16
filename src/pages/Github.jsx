@@ -22,22 +22,31 @@ export default function GitHubProfileReadme() {
       });
   }, []);
 
-  if (error) return <div className="text-red-500 text-center mt-10">{error}</div>;
-  if (!readme) return <div className="text-center text-gray-600 dark:text-gray-300 mt-10">Loading README...</div>;
+  if (error)
+    return (
+      <div className="text-red-500 text-center mt-10">{error}</div>
+    );
+  if (!readme)
+    return (
+      <div className="text-center text-gray-600 dark:text-gray-300 mt-10">
+        Loading README...
+      </div>
+    );
 
   return (
     <section
       id="Github"
-      className="pt-24 min-h-screen px-6 pb-30 md:px-20  text-black dark:text-white "
+      className="pt-24 min-h-screen px-6 pb-30 md:px-20 text-black dark:text-white"
     >
       <motion.h2
-              initial={{ opacity: 0, y: 40 }}
-              whileInView={{ opacity: 1, y: 0 }}
-              transition={{ duration: 0.8 }}
-              className="text-3xl sm:text-4xl font-extrabold mb-20 text-center  text-black dark:text-white"
-            >
-            GitHub Profile 
-            </motion.h2>
+        initial={{ opacity: 0, y: 40 }}
+        whileInView={{ opacity: 1, y: 0 }}
+        transition={{ duration: 0.8 }}
+        className="text-3xl sm:text-4xl font-extrabold mb-20 text-center"
+      >
+        GitHub Profile
+      </motion.h2>
+
       <div className="grid grid-cols-1 md:grid-cols-3 gap-10 max-w-7xl mx-auto">
         {/* LEFT PANEL */}
         <div className="md:col-span-1 bg-white/30 dark:bg-white/10 backdrop-blur-xl p-6 rounded-3xl border border-white/20 shadow-lg flex flex-col items-center gap-4">
@@ -74,12 +83,32 @@ export default function GitHubProfileReadme() {
           />
 
           {/* Tech Stack Badges */}
-          <div className="mt-6 flex flex-wrap justify-center gap-2">
-            <img src="https://img.shields.io/badge/React-20232A?style=for-the-badge&logo=react&logoColor=61DAFB" />
-            <img src="https://img.shields.io/badge/Node.js-339933?style=for-the-badge&logo=nodedotjs&logoColor=white" />
-            <img src="https://img.shields.io/badge/Express-000000?style=for-the-badge&logo=express&logoColor=white" />
-            <img src="https://img.shields.io/badge/MongoDB-4DB33D?style=for-the-badge&logo=mongodb&logoColor=white" />
-            <img src="https://img.shields.io/badge/TailwindCSS-06B6D4?style=for-the-badge&logo=tailwindcss&logoColor=white" />
+          <div className="mt-6 flex flex-wrap justify-center gap-3">
+            <img
+              src="https://img.shields.io/badge/React-20232A?style=for-the-badge&logo=react&logoColor=61DAFB"
+              alt="React"
+              className="h-8"
+            />
+            <img
+              src="https://img.shields.io/badge/Node.js-339933?style=for-the-badge&logo=nodedotjs&logoColor=white"
+              alt="Node.js"
+              className="h-8"
+            />
+            <img
+              src="https://img.shields.io/badge/Express-000000?style=for-the-badge&logo=express&logoColor=white"
+              alt="Express"
+              className="h-8"
+            />
+            <img
+              src="https://img.shields.io/badge/MongoDB-4DB33D?style=for-the-badge&logo=mongodb&logoColor=white"
+              alt="MongoDB"
+              className="h-8"
+            />
+            <img
+              src="https://img.shields.io/badge/TailwindCSS-06B6D4?style=for-the-badge&logo=tailwindcss&logoColor=white"
+              alt="Tailwind CSS"
+              className="h-8"
+            />
           </div>
         </div>
 
@@ -90,8 +119,28 @@ export default function GitHubProfileReadme() {
           whileInView={{ opacity: 1, y: 0 }}
           transition={{ duration: 0.9 }}
           viewport={{ once: true }}
+          style={{
+            wordBreak: "break-word",
+          }}
         >
-          <ReactMarkdown rehypePlugins={[rehypeRaw]} remarkPlugins={[remarkGfm]}>
+          <style>
+            {`
+              .markdown-body img {
+                display: inline-block;
+                margin: 4px;
+                height: 32px;
+              }
+              .markdown-body p {
+                display: flex;
+                flex-wrap: wrap;
+                gap: 8px;
+              }
+            `}
+          </style>
+          <ReactMarkdown
+            rehypePlugins={[rehypeRaw]}
+            remarkPlugins={[remarkGfm]}
+          >
             {readme}
           </ReactMarkdown>
         </motion.div>

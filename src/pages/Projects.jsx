@@ -58,55 +58,56 @@ export default function Projects() {
   return (
     <section
       id="projects"
-      className="relative z-10 px-4 sm:px-6 md:px-16 pt-24 pb-32  text-black dark:text-white"
+      className="relative z-10 pt-24 pb-32 px-4 sm:px-6 md:px-16 text-black dark:text-white"
     >
       <motion.h2
         initial={{ opacity: 0, y: 40 }}
         whileInView={{ opacity: 1, y: 0 }}
+        viewport={{ once: true }}
         transition={{ duration: 0.8 }}
-        className="text-3xl sm:text-4xl font-extrabold mb-20 text-center  text-black dark:text-white"
+        className="text-3xl sm:text-4xl font-extrabold mb-20 text-center"
       >
-         Projects
+        Projects
       </motion.h2>
 
-      <div className="grid grid-cols-1 sm:grid-cols-2 xl:grid-cols-3 gap-10 md:gap-12">
+      <div className="max-w-[90rem] mx-auto grid grid-cols-1 sm:grid-cols-2 xl:grid-cols-3 gap-10 md:gap-12">
         {projects.map((project, idx) => (
           <motion.div
             key={idx}
-            whileHover={{ scale: 1.03 }}
+            whileHover={{ scale: 1.04, rotate: 0.3 }}
             initial={{ opacity: 0, y: 60 }}
             whileInView={{ opacity: 1, y: 0 }}
-            transition={{ duration: 0.6, delay: idx * 0.15 }}
             viewport={{ once: true }}
-            className="bg-white/10 dark:bg-white/5 backdrop-blur-lg rounded-3xl shadow-xl p-4 overflow-hidden border border-white/10 group relative"
+            transition={{ duration: 0.6, delay: idx * 0.15 }}
+            className="relative group rounded-3xl border border-white/10 bg-white/10 dark:bg-white/5 backdrop-blur-md overflow-hidden shadow-[0_8px_30px_rgb(0,0,0,0.12)] transition-transform hover:shadow-2xl"
           >
             {/* Image */}
-            <div className="rounded-xl overflow-hidden h-44 sm:h-48 mb-4 relative">
+            <div className="h-44 sm:h-48 overflow-hidden relative rounded-t-3xl">
               <img
                 src={project.img}
                 alt={project.title}
-                className="w-full h-full object-cover group-hover:scale-105 transition-transform duration-500"
+                className="w-full h-full object-cover transition-transform duration-500 group-hover:scale-105"
               />
               <div className="absolute inset-0 bg-black/20 group-hover:bg-black/10 transition duration-500" />
             </div>
 
             {/* Content */}
-            <div className="px-2">
-              <h3 className="text-lg sm:text-xl font-semibold mb-1">{project.title}</h3>
-              <p className="text-sm sm:text-base mb-3 text-gray-700 dark:text-gray-300">
-                {project.desc}
-              </p>
-              <div className="flex flex-wrap gap-2 mb-4 text-xs sm:text-sm">
+            <div className="p-5 space-y-3">
+              <h3 className="text-lg sm:text-xl font-semibold">{project.title}</h3>
+              <p className="text-sm sm:text-base text-gray-700 dark:text-gray-300">{project.desc}</p>
+
+              <div className="flex flex-wrap gap-2 pt-2">
                 {project.stack.map((tech) => (
                   <span
                     key={tech}
-                    className="bg-gradient-to-br from-sky-300 to-sky-500 dark:from-sky-700 dark:to-sky-900 text-white px-2 py-0.5 rounded-full shadow-sm"
+                    className="text-xs sm:text-sm px-2 py-0.5 rounded-full text-white bg-gradient-to-br from-sky-400 to-sky-600 dark:from-sky-700 dark:to-sky-900 shadow-sm"
                   >
                     {tech}
                   </span>
                 ))}
               </div>
-              <div className="flex gap-4 text-sm font-medium">
+
+              <div className="pt-4 flex gap-4 text-sm font-medium">
                 {project.live && (
                   <a
                     href={project.live}
@@ -128,8 +129,8 @@ export default function Projects() {
               </div>
             </div>
 
-            {/* Glow */}
-            <div className="absolute top-0 left-0 w-full h-full opacity-0 group-hover:opacity-10 transition duration-500 bg-gradient-to-br from-purple-400 via-sky-400 to-transparent blur-2xl rounded-3xl z-[-1]" />
+            {/* Floating Glow */}
+            <div className="absolute -inset-1 z-[-1] opacity-0 group-hover:opacity-20 transition-all duration-700 blur-2xl rounded-3xl bg-gradient-to-tr from-purple-400 via-sky-400 to-transparent" />
           </motion.div>
         ))}
       </div>
