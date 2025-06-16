@@ -28,13 +28,13 @@ export default function GitHubProfileReadme() {
   return (
     <section
       id="Github"
-      className="pt-24 min-h-screen px-6 pb-30 md:px-20 "
+      className="pt-24 min-h-screen px-6 pb-30 md:px-20  text-black dark:text-white "
     >
       <motion.h2
               initial={{ opacity: 0, y: 40 }}
               whileInView={{ opacity: 1, y: 0 }}
               transition={{ duration: 0.8 }}
-              className="text-3xl sm:text-4xl font-extrabold mb-20 text-center"
+              className="text-3xl sm:text-4xl font-extrabold mb-20 text-center  text-black dark:text-white"
             >
             GitHub Profile 
             </motion.h2>

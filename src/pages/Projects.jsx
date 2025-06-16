@@ -58,13 +58,13 @@ export default function Projects() {
   return (
     <section
       id="projects"
-      className="relative z-10 px-4 sm:px-6 md:px-16 pt-24 pb-32 "
+      className="relative z-10 px-4 sm:px-6 md:px-16 pt-24 pb-32  text-black dark:text-white"
     >
       <motion.h2
         initial={{ opacity: 0, y: 40 }}
         whileInView={{ opacity: 1, y: 0 }}
         transition={{ duration: 0.8 }}
-        className="text-3xl sm:text-4xl font-extrabold mb-20 text-center"
+        className="text-3xl sm:text-4xl font-extrabold mb-20 text-center  text-black dark:text-white"
       >
          Projects
       </motion.h2>

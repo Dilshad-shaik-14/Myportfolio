@@ -63,14 +63,14 @@ export default function TimelinePage() {
   return (
     <section
       id="TimeLine"
-      className="pt-24 min-h-screen px-4 sm:px-6 md:px-12 lg:px-24 pb-20 
+      className="pt-24 min-h-screen px-4 sm:px-6 md:px-12 lg:px-24 pb-20  text-black dark:text-white
        overflow-hidden"
     >
       <motion.h2
         initial={{ opacity: 0, y: 50 }}
         animate={{ opacity: 1, y: 0 }}
         transition={{ duration: 0.7 }}
-        className="text-3xl sm:text-4xl font-bold text-center mb-16"
+        className="text-3xl sm:text-4xl font-bold text-center mb-16  text-black dark:text-white"
       >
         My Journey
       </motion.h2>

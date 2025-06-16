@@ -38,7 +38,7 @@ export default function Contact() {
   return (
     <section
       id="Contact"
-      className="min-h-screen py-24 px-4 sm:px-8 md:px-16 "
+      className="min-h-screen py-24 px-4 sm:px-8 md:px-16  text-black dark:text-white "
     >
       <Toaster position="top-center" />
       <motion.div

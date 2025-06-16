@@ -35,7 +35,7 @@ export default function Skills() {
   return (
     <section
       id="skills"
-      className="min-h-screen pt-32 pb-20 px-4 sm:px-8 md:px-16"
+      className="min-h-screen pt-32 pb-20 px-4 sm:px-8 md:px-16  text-black dark:text-white"
     >
       <motion.div
         initial={{ opacity: 0, y: 40 }}
@@ -44,7 +44,7 @@ export default function Skills() {
         transition={{ duration: 0.8 }}
         className="max-w-7xl mx-auto text-center"
       >
-        <h2 className="text-3xl sm:text-4xl md:text-5xl font-bold mb-12">
+        <h2 className="text-3xl sm:text-4xl md:text-5xl font-bold mb-12  text-black dark:text-white">
           My Skills
         </h2>
 
