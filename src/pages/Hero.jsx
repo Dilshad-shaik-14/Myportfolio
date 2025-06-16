@@ -25,7 +25,7 @@ export default function Hero() {
         <div className="absolute -inset-1 bg-gradient-to-br from-white/10 to-black/10 rounded-3xl blur-2xl opacity-50 group-hover:opacity-80 transition duration-700 pointer-events-none" />
         <div className="absolute inset-0 rounded-3xl ring-1 ring-white/10 group-hover:ring-white/20 transition duration-500 pointer-events-none" />
 
-        <h1 className="relative text-4xl sm:text-5xl xl:text-6xl font-extrabold mb-4 leading-tight text-white drop-shadow-lg">
+        <h1 className="relative text-4xl sm:text-5xl xl:text-6xl font-extrabold mb-4 leading-tight text-white drop-shadow-xl">
           Hi, I'm Dilshad Shaik
         </h1>
 
@@ -43,8 +43,9 @@ export default function Hero() {
           repeat={Infinity}
         />
 
-        <p className="relative mt-6 text-white/70 text-base sm:text-lg leading-relaxed max-w-2xl">
-          I craft high-performance web experiences with pixel-perfect UI and clean backend logic. Passionate about scalable systems, open-source collaboration, and building meaningful tools.
+        <p className="relative mt-6 text-white/80 text-base sm:text-lg leading-relaxed max-w-2xl">
+          I craft high-performance web experiences with pixel-perfect UI and clean backend logic.
+          Passionate about scalable systems, open-source collaboration, and building meaningful tools.
         </p>
 
         <div className="relative mt-8">
@@ -55,7 +56,8 @@ export default function Hero() {
             rel="noopener noreferrer"
             className="inline-flex items-center gap-2 px-6 py-3 text-sm sm:text-base rounded-full font-semibold
                        text-white bg-gradient-to-r from-indigo-500/40 to-purple-500/40
-                       hover:from-indigo-600/50 hover:to-purple-600/50
+                       hover:from-indigo-600/70 hover:to-purple-600/70
+                       hover:shadow-[0_0_20px_rgba(99,102,241,0.6)]
                        border border-white/20 backdrop-blur-lg shadow-md transition-all duration-300"
           >
             <FaDownload className="text-lg" /> Download Resume

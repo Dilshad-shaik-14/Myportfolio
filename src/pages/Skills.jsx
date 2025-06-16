@@ -44,9 +44,10 @@ export default function Skills() {
         transition={{ duration: 0.8 }}
         className="max-w-[90rem] mx-auto text-center"
       >
-        <h2 className="text-3xl sm:text-4xl md:text-5xl font-bold mb-14 sm:text-white text-black dark:text-white">
-          My Skills
+       <h2 className="text-3xl sm:text-4xl md:text-5xl font-bold mb-14 text-white dark:text-white">
+        My Skills
         </h2>
+
 
         <div className="grid grid-cols-2 sm:grid-cols-3 md:grid-cols-4 xl:grid-cols-5 gap-4 sm:gap-6 md:gap-8 px-2">
           {skills.map(({ icon, label, color }) => (

@@ -65,7 +65,7 @@ export default function Projects() {
         whileInView={{ opacity: 1, y: 0 }}
         viewport={{ once: true }}
         transition={{ duration: 0.8 }}
-        className="text-3xl sm:text-4xl font-extrabold mb-20 text-center"
+        className="text-2xl sm:text-4xl font-extrabold mb-20 text-center"
       >
         Projects
       </motion.h2>
@@ -93,27 +93,31 @@ export default function Projects() {
 
             {/* Content */}
             <div className="p-5 space-y-3">
-              <h3 className="text-lg sm:text-xl font-semibold">{project.title}</h3>
-              <p className="text-sm sm:text-base text-gray-700 dark:text-white">{project.desc}</p>
+              <h3 className="text-base sm:text-xl font-semibold text-gray-800 dark:text-gray-100">
+                {project.title}
+              </h3>
+              <p className="text-xs sm:text-base text-gray-600 dark:text-gray-300 leading-snug">
+                {project.desc}
+              </p>
 
               <div className="flex flex-wrap gap-2 pt-2">
                 {project.stack.map((tech) => (
                   <span
                     key={tech}
-                    className="text-xs sm:text-sm px-2 py-0.5 rounded-full text-white bg-gradient-to-br from-sky-400 to-sky-600 dark:from-sky-700 dark:to-sky-900 shadow-sm"
+                    className="text-[10px] sm:text-sm px-2 py-0.5 rounded-full text-white bg-gradient-to-br from-sky-400 to-sky-600 dark:from-sky-700 dark:to-sky-900 shadow-sm"
                   >
                     {tech}
                   </span>
                 ))}
               </div>
 
-              <div className="pt-4 flex gap-4 text-sm font-medium">
+              <div className="pt-4 flex gap-3 text-xs sm:text-sm font-medium">
                 {project.live && (
                   <a
                     href={project.live}
                     target="_blank"
                     rel="noopener noreferrer"
-                    className="text-sky-600 dark:text-sky-300 hover:underline"
+                    className="text-sky-700 dark:text-sky-400 hover:underline"
                   >
                     🔗 Live
                   </a>
@@ -122,7 +126,7 @@ export default function Projects() {
                   href={project.github}
                   target="_blank"
                   rel="noopener noreferrer"
-                  className="text-gray-600 dark:text-gray-300 hover:underline"
+                  className="text-gray-700 dark:text-gray-400 hover:underline"
                 >
                   💻 GitHub
                 </a>
