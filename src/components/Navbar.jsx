@@ -36,16 +36,17 @@ export default function Navbar() {
     <header
       className={`fixed top-0 left-0 w-full z-50 transition-all duration-500 ease-in-out ${
         isScrolled
-          ? "backdrop-blur-2xl bg-white/30 dark:bg-black/20 shadow-xl scale-[1.01]"
+          ? "backdrop-blur-xl bg-white/30 dark:bg-black/20 shadow-md border-b border-white/20 dark:border-white/10"
           : "bg-transparent"
       }`}
     >
-      <div className="max-w-6xl mx-auto flex justify-between items-center px-6 py-4 md:py-6">
-        {/* Logo */}
-        <div className="text-xl font-bold text-black dark:text-white">Portfolio</div>
-
+      <div
+        className="max-w-6xl mx-auto flex justify-between items-center px-6 py-4 md:py-5 rounded-xl
+        backdrop-blur-lg bg-white/20 dark:bg-white/5 shadow-[0_4px_30px_rgba(0,0,0,0.1)] border border-white/30 dark:border-white/10
+        mt-3 mx-3 md:mx-auto transition-all duration-300"
+      >
         {/* Desktop Nav */}
-        <ul className="hidden md:flex space-x-6 text-[16px] font-medium">
+        <ul className="hidden md:flex space-x-8 text-[15px] font-medium tracking-wide">
           {navItems.map((item, i) => (
             <motion.li
               key={item.id}
@@ -65,7 +66,7 @@ export default function Navbar() {
                 activeClass="active-link"
                 className="flex items-center gap-1 capitalize text-black dark:text-white"
               >
-                <span className="text-lg">{item.icon}</span>
+                <span className="text-[18px]">{item.icon}</span>
                 <span>{item.label}</span>
               </Link>
               <span className="absolute bottom-[-4px] left-0 w-0 h-[2px] bg-sky-500 group-hover:w-full transition-all duration-300" />
@@ -73,7 +74,7 @@ export default function Navbar() {
           ))}
         </ul>
 
-        {/* Modern Icon Toggle */}
+        {/* Mobile Menu Button */}
         <div className="md:hidden text-3xl text-black dark:text-white">
           <button onClick={() => setIsMenuOpen(!isMenuOpen)}>
             {isMenuOpen ? <HiOutlineX /> : <HiOutlineMenuAlt3 />}
@@ -81,15 +82,15 @@ export default function Navbar() {
         </div>
       </div>
 
-      {/* Mobile Slide-In Menu */}
+      {/* Mobile Slide-In Drawer */}
       <AnimatePresence>
         {isMenuOpen && (
           <motion.div
             initial={{ x: "100%" }}
             animate={{ x: 0 }}
             exit={{ x: "100%" }}
-            transition={{ type: "tween", duration: 0.3 }}
-            className="fixed top-0 right-0 h-screen w-72 sm:w-80 bg-white dark:bg-zinc-900/90 shadow-lg z-50 backdrop-blur-md border-l border-gray-300 dark:border-white/10"
+            transition={{ type: "spring", stiffness: 180, damping: 15 }}
+            className="fixed top-0 right-0 h-screen w-72 sm:w-80 bg-white/60 dark:bg-zinc-900/90 backdrop-blur-md shadow-xl z-50 border-l border-white/30 dark:border-white/10"
           >
             <ul className="flex flex-col mt-24 px-8 space-y-6 text-lg font-medium text-black dark:text-white">
               {navItems.map((item) => (
