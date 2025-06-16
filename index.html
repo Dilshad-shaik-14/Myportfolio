@@ -3,10 +3,25 @@
   <head>
     <meta charset="UTF-8" />
     <link rel="icon" type="image/svg+xml" href="/vite.svg" />
-    <meta name="viewport" content="width=device-width, initial-scale=1.0" />
-    <title>Vite + React</title>
+    
+    <!-- ✅ Critical viewport tag for consistent scaling -->
+    <meta name="viewport" content="width=device-width, initial-scale=1.0, maximum-scale=1, user-scalable=no" />
+
+    <!-- ✅ Preconnect for faster font load (if using fonts like Inter, Poppins, etc.) -->
+    <link rel="preconnect" href="https://fonts.googleapis.com" />
+    <link rel="preconnect" href="https://fonts.gstatic.com" crossorigin />
+    
+    <!-- ✅ Optional: Import a consistent font family -->
+    <link href="https://fonts.googleapis.com/css2?family=Inter:wght@400;500;600;700;800&display=swap" rel="stylesheet" />
+    
+    <!-- ✅ Optional: Add SEO title -->
+    <title>Dilshad Shaik — Full-Stack Developer Portfolio</title>
+
+    <!-- ✅ Optional: Favicon -->
+    <link rel="icon" href="/favicon.ico" type="image/x-icon" />
   </head>
-  <body>
+
+  <body class="bg-black text-white font-sans antialiased overflow-x-hidden">
     <div id="root"></div>
     <script type="module" src="/src/main.jsx"></script>
   </body>
