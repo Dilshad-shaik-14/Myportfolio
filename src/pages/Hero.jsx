@@ -14,22 +14,22 @@ export default function Hero() {
       {/* Hero Content */}
 <motion.div
   className="relative z-10 w-full md:w-1/2 p-6 md:p-10 rounded-3xl text-center md:text-left
-             border border-black/10 
-             backdrop-blur-2xl bg-white/60
-             shadow-[0_30px_60px_-15px_rgba(0,0,0,0.2)]
+             border border-white/20
+             backdrop-blur-3xl bg-white/10 dark:bg-white/10
+             shadow-[0_30px_60px_-15px_rgba(0,0,0,0.5)]
              transition-all duration-500 group overflow-hidden"
   initial={{ opacity: 0, x: 40 }}
   animate={{ opacity: 1, x: 0 }}
   transition={{ duration: 1 }}
 >
-  {/* Light glowing ring effect */}
-  <div className="absolute -inset-1 bg-gradient-to-br from-[#ffffffcc] to-[#ffffff55] rounded-3xl blur-2xl opacity-40 group-hover:opacity-60 transition duration-700 pointer-events-none" />
-  
-  {/* Subtle border glow */}
-  <div className="absolute inset-0 rounded-3xl ring-1 ring-black/10 group-hover:ring-black/20 transition-all duration-500 pointer-events-none" />
+  {/* Outer glow layer */}
+  <div className="absolute -inset-1 bg-gradient-to-br from-[#ffffff22] to-[#1a1a1a33] rounded-3xl blur-2xl opacity-60 group-hover:opacity-80 transition duration-700 pointer-events-none" />
+
+  {/* Glowing border ring */}
+  <div className="absolute inset-0 rounded-3xl ring-1 ring-white/20 group-hover:ring-white/30 transition-all duration-500 pointer-events-none" />
 
   {/* Text Section */}
-  <h1 className="relative text-4xl sm:text-5xl md:text-6xl font-extrabold mb-4 leading-tight text-black drop-shadow-sm">
+  <h1 className="relative text-4xl sm:text-5xl md:text-6xl font-extrabold mb-4 leading-tight text-white drop-shadow-md">
     Hi, I'm Dilshad Shaik
   </h1>
 
@@ -48,11 +48,11 @@ export default function Hero() {
     ]}
     wrapper="span"
     speed={50}
-    className="relative text-lg sm:text-xl md:text-2xl font-semibold text-black/70"
+    className="relative text-lg sm:text-xl md:text-2xl font-semibold text-white/80"
     repeat={Infinity}
   />
 
-  <p className="relative mt-6 text-black/60 text-base sm:text-lg leading-relaxed">
+  <p className="relative mt-6 text-white/70 text-base sm:text-lg leading-relaxed">
     I create robust web experiences using clean code and sharp UI/UX.
     Passionate about building scalable applications and contributing to open-source projects.
   </p>
@@ -65,13 +65,15 @@ export default function Hero() {
       target="_blank"
       rel="noopener noreferrer"
       className="inline-flex items-center gap-2 px-6 py-3 text-sm sm:text-base rounded-full font-semibold
-                 text-white bg-black hover:bg-neutral-800
-                 border border-black/20 shadow-md transition-all duration-300"
+                 text-white bg-white/10 hover:bg-white/20
+                 border border-white/30 backdrop-blur-md shadow-md transition-all duration-300"
     >
       <FaDownload className="text-lg" /> Download Resume
     </a>
   </div>
 </motion.div>
+
+
       {/* Lottie Animation */}
       <motion.div
         className="w-full md:w-1/2 max-w-md md:max-w-full"
