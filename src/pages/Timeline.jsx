@@ -132,7 +132,7 @@ export default function TimelinePage() {
                 <div
                   className={`mt-10 md:mt-0 md:max-w-[47%] p-6 rounded-2xl 
                   bg-white/30 dark:bg-white/10 backdrop-blur-lg shadow-xl border border-white/20 
-                  hover:scale-[1.03] transition duration-300 ${
+                  hover:scale-[1.03] transition duration-300  sm: text-white ${
                     isLeft ? "md:mr-auto" : "md:ml-auto"
                   }`}
                 >
@@ -142,7 +142,7 @@ export default function TimelinePage() {
                   <h5 className="text-lg sm:text-xl font-bold mb-2">
                     {item.event}
                   </h5>
-                  <p className="text-sm text-gray-700 dark:text-gray-300 leading-relaxed">
+                  <p className="text-sm text-gray-700 sm:text-gray-100 dark:text-gray-300 leading-relaxed">
                     {item.description}
                   </p>
                 </div>

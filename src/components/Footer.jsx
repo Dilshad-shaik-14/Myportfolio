@@ -8,7 +8,7 @@ export default function Footer() {
         <h2 className="text-2xl md:text-3xl font-bold mb-4 text-gray-900 dark:text-white">
           Have a project or collaboration in mind?
         </h2>
-        <p className="mb-6 text-gray-600 dark:text-gray-400 text-sm md:text-base">
+        <p className="mb-6 text-gray-600 dark:text-white text-sm md:text-base">
           I'm always open to discussing tech, design, or new ideas. Reach out and let's make something awesome together!
         </p>
 
@@ -20,7 +20,7 @@ export default function Footer() {
           Contact Me
         </a>
 
-        <div className="border-t border-white/20 mt-10 pt-6 text-xs text-gray-600 dark:text-gray-500">
+        <div className="border-t border-white/20 mt-10 pt-6 text-xs text-gray-600 dark:text-white">
           © 2025 <span className="font-semibold">Shaik Dilshad</span> | All Rights Reserved
         </div>
       </div>

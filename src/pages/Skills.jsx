@@ -44,7 +44,7 @@ export default function Skills() {
         transition={{ duration: 0.8 }}
         className="max-w-[90rem] mx-auto text-center"
       >
-        <h2 className="text-3xl sm:text-4xl md:text-5xl font-bold mb-14 text-black dark:text-white">
+        <h2 className="text-3xl sm:text-4xl md:text-5xl font-bold mb-14 sm:text-white text-black dark:text-white">
           My Skills
         </h2>
 

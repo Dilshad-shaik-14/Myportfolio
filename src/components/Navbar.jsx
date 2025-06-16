@@ -46,7 +46,7 @@ export default function Navbar() {
         animate={{ y: 0, opacity: 1 }}
         transition={{ type: "spring", stiffness: 120, damping: 12 }}
         className="max-w-6xl mx-auto px-6 py-4 mt-5 flex justify-center items-center rounded-3xl
-        bg-white/20 dark:bg-white/5 backdrop-blur-xl border border-white/40 dark:border-white/10
+        bg-white/20 dark:bg-white/7 backdrop-blur-xl border border-white/40 dark:border-white/10
         shadow-[0_8px_32px_rgba(31,38,135,0.25)] hover:shadow-[0_12px_48px_rgba(0,0,0,0.3)]"
       >
         <ul className="flex space-x-6 md:space-x-10 text-[17px] font-semibold tracking-wide">

@@ -94,7 +94,7 @@ export default function Projects() {
             {/* Content */}
             <div className="p-5 space-y-3">
               <h3 className="text-lg sm:text-xl font-semibold">{project.title}</h3>
-              <p className="text-sm sm:text-base text-gray-700 dark:text-gray-300">{project.desc}</p>
+              <p className="text-sm sm:text-base text-gray-700 dark:text-white">{project.desc}</p>
 
               <div className="flex flex-wrap gap-2 pt-2">
                 {project.stack.map((tech) => (

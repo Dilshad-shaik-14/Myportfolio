@@ -13,7 +13,7 @@ export default function About() {
           whileInView={{ opacity: 1, y: 0 }}
           transition={{ duration: 0.8 }}
           viewport={{ once: true }}
-          className="text-3xl sm:text-4xl md:text-5xl font-extrabold text-center mb-10 sm:mb-12"
+          className="text-3xl sm:text-4xl md:text-5xl font-extrabold text-center mb-10 sm:mb-12 sm:text-white dark:text-white"
         >
           About Me
         </motion.h2>
@@ -26,12 +26,18 @@ export default function About() {
           viewport={{ once: true }}
           className="backdrop-blur-xl bg-white/50 dark:bg-white/10 border border-white/30 dark:border-white/10 rounded-3xl px-6 py-10 sm:p-10 shadow-2xl transition-all duration-500 max-w-4xl mx-auto"
         >
-          <p className="text-base sm:text-lg md:text-xl leading-relaxed tracking-wide text-center text-black/90 dark:text-white/80">
-            I’m a <span className="font-semibold text-sky-600 dark:text-sky-400">MERN Stack Developer</span> passionate about
-            crafting immersive and performant full-stack applications. I love transforming ideas into scalable, user-focused
-            digital products — from elegant UIs to powerful backend systems. A constant learner and an
-            <span className="font-semibold text-sky-600 dark:text-sky-400"> open-source contributor</span>, I’m always exploring new tech
-            to push boundaries and innovate.
+          <p className="text-base sm:text-lg md:text-xl leading-relaxed tracking-wide text-center text-neutral-800 dark:text-white">
+            I’m a{" "}
+            <span className="font-semibold text-sky-600 dark:text-sky-400">
+              MERN Stack Developer
+            </span>{" "}
+            passionate about crafting immersive and performant full-stack applications. I love transforming ideas into
+            scalable, user-focused digital products — from elegant UIs to powerful backend systems. A constant learner
+            and an{" "}
+            <span className="font-semibold text-sky-600 dark:text-sky-400">
+              open-source contributor
+            </span>
+            , I’m always exploring new tech to push boundaries and innovate.
           </p>
 
           {/* Skills Grid */}
@@ -52,8 +58,10 @@ export default function About() {
                 transition={{ type: "spring", stiffness: 200 }}
                 className="bg-white/70 dark:bg-black/20 backdrop-blur-md border border-white/20 dark:border-white/10 rounded-xl p-5 sm:p-6 shadow-xl hover:shadow-2xl transition-all"
               >
-                <h3 className="text-lg sm:text-xl font-bold mb-2">{card.title}</h3>
-                <p className="text-gray-800 dark:text-gray-300 text-sm sm:text-base">
+                <h3 className="text-lg sm:text-xl font-bold mb-2">
+                  {card.title}
+                </h3>
+                <p className="text-neutral-700 dark:text-neutral-300 text-sm sm:text-base">
                   {card.desc}
                 </p>
               </motion.div>

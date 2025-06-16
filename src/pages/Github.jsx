@@ -42,7 +42,7 @@ export default function GitHubProfileReadme() {
         initial={{ opacity: 0, y: 40 }}
         whileInView={{ opacity: 1, y: 0 }}
         transition={{ duration: 0.8 }}
-        className="text-3xl sm:text-4xl font-extrabold mb-20 text-center"
+        className="text-3xl sm:text-4xl font-extrabold mb-20 text-center sm:text-white dark:text-white"
       >
         GitHub Profile
       </motion.h2>
