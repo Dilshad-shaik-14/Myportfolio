@@ -46,33 +46,38 @@ export default function Contact() {
         whileInView={{ opacity: 1, y: 0 }}
         transition={{ duration: 0.6, ease: "easeOut" }}
         viewport={{ once: true }}
-        className="max-w-3xl mx-auto glassmorphic px-6 py-10 sm:px-10 sm:py-12 rounded-3xl shadow-2xl border border-white/20 bg-white/20 dark:bg-white/10 backdrop-blur-md"
+        className="max-w-3xl mx-auto glassmorphic px-4 py-8 sm:px-8 sm:py-12 rounded-3xl shadow-2xl border border-white/20 bg-white/10 dark:bg-white/10 backdrop-blur-md"
       >
-        <h2 className="text-3xl sm:text-4xl font-bold sm:font-extrabold text-center mb-10 text-white tracking-tight">
+        <h2 className="text-2xl sm:text-4xl font-bold sm:font-extrabold text-center mb-10 text-white tracking-tight">
           Get in Touch
         </h2>
 
-        <form ref={form} onSubmit={sendEmail} className="space-y-6" id="contact-form">
+        <form
+          ref={form}
+          onSubmit={sendEmail}
+          className="space-y-5"
+          id="contact-form"
+        >
           <input
             type="text"
             name="from_name"
             placeholder="Your Name"
             required
-            className="w-full px-4 py-3 rounded-xl bg-white/30 dark:bg-white/10 backdrop-blur border border-gray-300 dark:border-gray-700 text-white placeholder-gray-300 text-sm sm:text-base"
+            className="w-full px-4 py-3 rounded-xl bg-white/20 dark:bg-white/10 backdrop-blur border border-gray-300 dark:border-gray-700 text-white placeholder-gray-300 text-base sm:text-lg"
           />
           <input
             type="email"
             name="from_email"
             placeholder="Your Email"
             required
-            className="w-full px-4 py-3 rounded-xl bg-white/30 dark:bg-white/10 backdrop-blur border border-gray-300 dark:border-gray-700 text-white placeholder-gray-300 text-sm sm:text-base"
+            className="w-full px-4 py-3 rounded-xl bg-white/20 dark:bg-white/10 backdrop-blur border border-gray-300 dark:border-gray-700 text-white placeholder-gray-300 text-base sm:text-lg"
           />
           <textarea
             name="message"
             placeholder="Your Message"
             rows="5"
             required
-            className="w-full px-4 py-3 rounded-xl bg-white/30 dark:bg-white/10 backdrop-blur border border-gray-300 dark:border-gray-700 text-white placeholder-gray-300 text-sm sm:text-base"
+            className="w-full px-4 py-3 rounded-xl bg-white/20 dark:bg-white/10 backdrop-blur border border-gray-300 dark:border-gray-700 text-white placeholder-gray-300 text-base sm:text-lg"
           ></textarea>
           <motion.button
             whileTap={{ scale: 0.97 }}
@@ -89,7 +94,7 @@ export default function Contact() {
 
         {/* Social Icons */}
         <motion.div
-          className="mt-10 flex flex-wrap justify-center gap-6 text-xl sm:text-2xl text-gray-300"
+          className="mt-10 flex flex-wrap justify-center gap-8 text-2xl sm:text-3xl text-white"
           initial={{ opacity: 0, y: 20 }}
           whileInView={{ opacity: 1, y: 0 }}
           transition={{ delay: 0.2, duration: 0.6 }}
@@ -99,7 +104,8 @@ export default function Contact() {
             href="https://github.com/Dilshad-shaik-14"
             target="_blank"
             rel="noopener noreferrer"
-            className="hover:text-blue-500 transition-colors duration-300"
+            className="hover:text-blue-400 transition-colors duration-300"
+            aria-label="GitHub"
           >
             <FaGithub />
           </a>
@@ -107,13 +113,15 @@ export default function Contact() {
             href="https://linkedin.com/in/dilshadsk"
             target="_blank"
             rel="noopener noreferrer"
-            className="hover:text-blue-600 transition-colors duration-300"
+            className="hover:text-blue-300 transition-colors duration-300"
+            aria-label="LinkedIn"
           >
             <FaLinkedin />
           </a>
           <a
             href="mailto:dilshadshaik467@gmail.com"
-            className="hover:text-red-500 transition-colors duration-300"
+            className="hover:text-red-400 transition-colors duration-300"
+            aria-label="Email"
           >
             <FaEnvelope />
           </a>

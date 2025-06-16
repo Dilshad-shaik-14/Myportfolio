@@ -26,7 +26,7 @@ export default function About() {
           viewport={{ once: true }}
           className="backdrop-blur-xl bg-white/50 dark:bg-white/10 border border-white/30 dark:border-white/10 rounded-3xl px-6 py-10 sm:p-10 shadow-2xl transition-all duration-500 max-w-4xl mx-auto"
         >
-          <p className="text-sm sm:text-base md:text-lg leading-relaxed tracking-wide text-center text-black dark:text-white text-opacity-90 dark:text-opacity-90">
+          <p className="text-sm sm:text-base md:text-lg leading-relaxed tracking-wide text-center text-white dark:text-white text-opacity-90 dark:text-opacity-90">
             I’m a{" "}
             <span className="font-semibold text-sky-600 dark:text-sky-400">
               MERN Stack Developer

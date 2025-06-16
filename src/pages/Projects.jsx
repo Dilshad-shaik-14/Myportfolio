@@ -58,14 +58,14 @@ export default function Projects() {
   return (
     <section
       id="projects"
-      className="relative z-10 pt-24 pb-32 px-4 sm:px-6 md:px-16 text-black dark:text-white"
+      className="relative z-10 pt-24 pb-32 px-4 sm:px-6 md:px-16 text-white dark:text-white"
     >
       <motion.h2
         initial={{ opacity: 0, y: 40 }}
         whileInView={{ opacity: 1, y: 0 }}
         viewport={{ once: true }}
         transition={{ duration: 0.8 }}
-        className="text-2xl sm:text-4xl font-extrabold mb-20 text-center"
+        className="text-2xl sm:text-4xl font-extrabold mb-20 text-center text-white"
       >
         Projects
       </motion.h2>
@@ -93,10 +93,10 @@ export default function Projects() {
 
             {/* Content */}
             <div className="p-5 space-y-3">
-              <h3 className="text-base sm:text-xl font-semibold text-gray-800 dark:text-gray-100">
+              <h3 className="text-base sm:text-xl font-semibold text-white sm:text-gray-800 dark:text-white">
                 {project.title}
               </h3>
-              <p className="text-xs sm:text-base text-gray-600 dark:text-gray-300 leading-snug">
+              <p className="text-xs sm:text-base text-white sm:text-gray-600 dark:text-gray-300 leading-snug">
                 {project.desc}
               </p>
 
@@ -117,7 +117,7 @@ export default function Projects() {
                     href={project.live}
                     target="_blank"
                     rel="noopener noreferrer"
-                    className="text-sky-700 dark:text-sky-400 hover:underline"
+                    className="text-white sm:text-sky-700 dark:text-sky-400 hover:underline"
                   >
                     🔗 Live
                   </a>
@@ -126,7 +126,7 @@ export default function Projects() {
                   href={project.github}
                   target="_blank"
                   rel="noopener noreferrer"
-                  className="text-gray-700 dark:text-gray-400 hover:underline"
+                  className="text-white sm:text-gray-700 dark:text-gray-400 hover:underline"
                 >
                   💻 GitHub
                 </a>

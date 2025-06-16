@@ -36,13 +36,13 @@ export default function GitHubProfileReadme() {
   return (
     <section
       id="Github"
-      className="pt-24 min-h-screen px-6 pb-30 md:px-20 text-black dark:text-white"
+      className="pt-24 min-h-screen px-6 pb-30 md:px-20 text-white dark:text-white"
     >
       <motion.h2
         initial={{ opacity: 0, y: 40 }}
         whileInView={{ opacity: 1, y: 0 }}
         transition={{ duration: 0.8 }}
-        className="text-3xl sm:text-4xl font-extrabold mb-20 text-center sm:text-white dark:text-white"
+        className="text-3xl sm:text-4xl font-extrabold mb-20 text-center text-white"
       >
         GitHub Profile
       </motion.h2>
@@ -55,15 +55,15 @@ export default function GitHubProfileReadme() {
             alt="GitHub Avatar"
             className="w-28 h-28 rounded-full border-4 border-blue-500 shadow-md"
           />
-          <h2 className="text-2xl font-bold mt-2">Dilshad Shaik</h2>
-          <p className="text-sm text-center text-gray-600 dark:text-gray-300">
+          <h2 className="text-2xl font-bold mt-2 text-white">Dilshad Shaik</h2>
+          <p className="text-sm text-center text-white dark:text-gray-300">
             Passionate Full Stack Developer | MERN | GSoC Aspirant
           </p>
           <a
             href="https://github.com/Dilshad-shaik-14"
             target="_blank"
             rel="noopener noreferrer"
-            className="mt-2 text-blue-600 dark:text-blue-400 hover:underline"
+            className="mt-2 text-blue-300 dark:text-blue-400 hover:underline"
           >
             @Dilshad-shaik-14
           </a>
@@ -114,7 +114,7 @@ export default function GitHubProfileReadme() {
 
         {/* RIGHT PANEL - Animated Markdown */}
         <motion.div
-          className="md:col-span-2 overflow-auto max-h-[80vh] scroll-pb-16 pb-16 p-8 rounded-3xl bg-white/40 dark:bg-white/10 backdrop-blur-lg border border-white/20 shadow-xl custom-scroll markdown-body"
+          className="md:col-span-2 overflow-auto max-h-[80vh] scroll-pb-16 pb-16 p-8 rounded-3xl bg-white/40 dark:bg-white/10 backdrop-blur-lg border border-white/20 shadow-xl custom-scroll markdown-body text-white"
           initial={{ opacity: 0, y: 50 }}
           whileInView={{ opacity: 1, y: 0 }}
           transition={{ duration: 0.9 }}
@@ -134,6 +134,9 @@ export default function GitHubProfileReadme() {
                 display: flex;
                 flex-wrap: wrap;
                 gap: 8px;
+              }
+              .markdown-body, .markdown-body * {
+                color: white !important;
               }
             `}
           </style>

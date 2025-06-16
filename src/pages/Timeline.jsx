@@ -82,13 +82,13 @@ export default function TimelinePage() {
   return (
     <section
       id="TimeLine"
-      className="pt-24 min-h-screen px-4 sm:px-6 md:px-12 lg:px-24 pb-20 text-black dark:text-white overflow-hidden"
+      className="pt-24 min-h-screen px-4 sm:px-6 md:px-12 lg:px-24 pb-20 text-white dark:text-white overflow-hidden"
     >
       <motion.h2
         initial={{ opacity: 0, y: 50 }}
         animate={{ opacity: 1, y: 0 }}
         transition={{ duration: 0.7 }}
-        className="text-3xl sm:text-4xl font-bold text-center mb-16 text-black dark:text-white"
+        className="text-3xl sm:text-4xl font-bold text-center mb-16 text-white"
       >
         My Journey
       </motion.h2>
@@ -132,17 +132,17 @@ export default function TimelinePage() {
                 <div
                   className={`mt-10 md:mt-0 md:max-w-[47%] p-6 rounded-2xl 
                   bg-white/30 dark:bg-white/10 backdrop-blur-lg shadow-xl border border-white/20 
-                  hover:scale-[1.03] transition duration-300  sm: text-white ${
+                  hover:scale-[1.03] transition duration-300 text-white ${
                     isLeft ? "md:mr-auto" : "md:ml-auto"
                   }`}
                 >
-                  <h4 className="text-sm font-semibold text-blue-600 dark:text-blue-300 mb-1">
+                  <h4 className="text-sm font-semibold text-blue-200 sm:text-blue-600 dark:text-blue-300 mb-1">
                     {item.year}
                   </h4>
-                  <h5 className="text-lg sm:text-xl font-bold mb-2">
+                  <h5 className="text-lg sm:text-xl font-bold mb-2 text-white">
                     {item.event}
                   </h5>
-                  <p className="text-sm text-gray-700 sm:text-gray-100 dark:text-gray-300 leading-relaxed">
+                  <p className="text-sm text-white sm:text-gray-700 dark:sm:text-gray-300 leading-relaxed">
                     {item.description}
                   </p>
                 </div>
