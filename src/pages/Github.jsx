@@ -114,7 +114,7 @@ export default function GitHubProfileReadme() {
 
         {/* RIGHT PANEL - Animated Markdown */}
         <motion.div
-          className="md:col-span-2 overflow-auto max-h-[80vh] scroll-pb-16 pb-16 p-8 rounded-3xl bg-white/40 dark:bg-white/10 backdrop-blur-lg border border-white/20 shadow-xl custom-scroll markdown-body text-white"
+          className="md:col-span-2 overflow-auto max-h-[80vh] scroll-pb-16 pb-16 p-4 sm:p-8 rounded-3xl bg-white dark:bg-gray-900 backdrop-blur-lg border border-white/20 shadow-xl custom-scroll markdown-body"
           initial={{ opacity: 0, y: 50 }}
           whileInView={{ opacity: 1, y: 0 }}
           transition={{ duration: 0.9 }}
@@ -135,8 +135,15 @@ export default function GitHubProfileReadme() {
                 flex-wrap: wrap;
                 gap: 8px;
               }
-              .markdown-body, .markdown-body * {
-                color: white !important;
+              @media (max-width: 767px) {
+                .markdown-body, .markdown-body * {
+                  color: #222 !important;
+                }
+              }
+              @media (min-width: 768px) {
+                .markdown-body, .markdown-body * {
+                  color: #fff !important;
+                }
               }
             `}
           </style>

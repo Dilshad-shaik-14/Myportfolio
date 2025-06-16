@@ -54,12 +54,8 @@ export default function Hero() {
             download
             target="_blank"
             rel="noopener noreferrer"
-            className="inline-flex items-center gap-2 px-6 py-3 text-sm sm:text-base rounded-full font-semibold
-                       text-white bg-gradient-to-r from-indigo-500/40 to-purple-500/40
-                       hover:from-indigo-600/70 hover:to-purple-600/70
-                       hover:shadow-[0_0_20px_rgba(99,102,241,0.6)]
-                       border border-white/20 backdrop-blur-lg shadow-md transition-all duration-300"
-          >
+              className="inline-flex items-center gap-2 px-6 py-3 rounded-full font-semibold text-white backdrop-blur-md bg-white/20 border border-white/30 shadow-lg hover:bg-white/40 hover:text-blue-700 transition-all duration-300">
+
             <FaDownload className="text-lg" /> Download Resume
           </a>
         </div>
