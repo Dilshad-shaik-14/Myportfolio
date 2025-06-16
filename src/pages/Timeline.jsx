@@ -20,23 +20,23 @@ export default function TimelinePage() {
     () => [
       {
         year: "2020–2022",
-        event: "Started My Tech Journey with LaTeX, HTML, CSS, and JavaScript",
+        event: "Began My Tech Journey",
         description:
-          "Began my programming journey with LaTeX for academic writing, then transitioned to web development with HTML, CSS, and JavaScript.",
+          "Started with LaTeX for academic writing, then moved into web development with HTML, CSS, and JavaScript, building my first static websites.",
         icon: <FaCode className="text-blue-500 w-5 h-5" aria-label="code" />,
       },
       {
         year: "2023",
-        event: "Started Engineering in CSE with C, C++, and Python",
+        event: "Engineering in CSE: C, C++, Python",
         description:
-          "Developed a strong foundation in programming languages C, C++, and Python, enhancing my problem-solving skills and algorithmic thinking.",
+          "Strengthened my programming fundamentals and problem-solving skills through coursework and projects in C, C++, and Python.",
         icon: <FaCode className="text-purple-500 w-5 h-5" aria-label="code" />,
       },
       {
         year: "2024",
-        event: "Built React Applications",
+        event: "Built React Projects",
         description:
-          "Dived into React.js, mastering component-based architecture and state management to create dynamic web applications.",
+          "Developed dynamic web applications using React.js, focusing on component-based architecture and state management.",
         icon: (
           <FaProjectDiagram
             className="text-green-500 w-5 h-5"
@@ -46,9 +46,9 @@ export default function TimelinePage() {
       },
       {
         year: "2024",
-        event: "Started mastering React",
+        event: "Advanced React Skills",
         description:
-          "Focused on mastering React.js, enhancing my skills in building interactive and responsive user interfaces.",
+          "Deepened my expertise in React by building complex UIs, optimizing performance, and exploring advanced hooks and patterns.",
         icon: (
           <FaProjectDiagram
             className="text-red-600 w-5 h-5"
@@ -58,9 +58,9 @@ export default function TimelinePage() {
       },
       {
         year: "2024",
-        event: "Completed Full Stack Development",
+        event: "Full Stack Developer",
         description:
-          "Successfully completed a comprehensive full-stack development program, gaining expertise in both frontend and backend technologies.",
+          "Completed a full-stack development program, mastering both frontend (React, Tailwind) and backend (Node.js, Express, MongoDB) technologies.",
         icon: (
           <FaCertificate
             className="text-orange-500 w-5 h-5"
@@ -70,9 +70,9 @@ export default function TimelinePage() {
       },
       {
         year: "2025",
-        event: "Google Summer of Code Proposal – Plone",
+        event: "GSoC Proposal – Plone",
         description:
-          "Proposed UI/UX improvements to Volto for Plone Foundation. Ranked in top 10% of applicants, showcasing open-source dedication.",
+          "Submitted a proposal for Google Summer of Code, suggesting UI/UX improvements for Volto (Plone Foundation). Ranked in the top 10% of applicants.",
         icon: <FaGoogle className="text-red-500 w-5 h-5" aria-label="google" />,
       },
     ],

@@ -10,14 +10,14 @@ import React from "react";
 const projects = [
   {
     title: "YouTube+Twitter Hybrid App",
-    desc: "A full-featured MERN app with tweeting, video upload, playlists, and real-time likes/comments.",
+    desc: "A full-featured MERN social platform combining video sharing and microblogging. Users can tweet, upload videos, create playlists, and interact in real time with likes and comments. Includes JWT authentication and a modern UI.",
     stack: ["React", "Node.js", "Express", "MongoDB", "JWT"],
     img: s5,
     github: "https://github.com/Dilshad-shaik-14/backend_01",
   },
   {
     title: "Cronicle Cave App",
-    desc: "React + Appwrite CRUD app with authentication and filtering.",
+    desc: "A CRUD web app for managing and filtering content, built with React and Express. Features secure authentication, content filtering, and a responsive dashboard. Data is stored in MongoDB for scalability.",
     stack: ["React", "Express", "MongoDB"],
     img: s1,
     live: "https://full-stack-01.vercel.app",
@@ -25,7 +25,7 @@ const projects = [
   },
   {
     title: "Animated Portfolio",
-    desc: "Tailwind + Framer Motion based elegant portfolio.",
+    desc: "A personal portfolio website showcasing projects and skills. Built with React, styled using Tailwind CSS, and enhanced with Framer Motion for smooth animations and interactive transitions.",
     stack: ["React", "Tailwind", "Framer Motion"],
     img: s2,
     live: "https://portfolio-s7m8.vercel.app",
@@ -33,21 +33,21 @@ const projects = [
   },
   {
     title: "Tictactoe Game",
-    desc: "A simple Tic Tac Toe game with a twist: play among friends",
+    desc: "A modern take on the classic Tic Tac Toe game. Play with friends in a clean, responsive UI built with React and Tailwind CSS. Features game state management and instant feedback.",
     stack: ["React", "tailwindCSS"],
     img: s3,
     github: "https://github.com/Dilshad-shaik-14/ticktaktoe",
   },
   {
-    title: "GlassMorphism login page",
-    desc: "A simple login page with glassmorphism effect",
+    title: "GlassMorphism Login Page",
+    desc: "A stylish login page featuring a glassmorphism effect for a modern look. Built with React and Tailwind CSS, focusing on UI/UX and responsive design.",
     stack: ["React", "tailwindCSS"],
     img: s4,
     github: "https://github.com/Dilshad-shaik-14/login_out",
   },
   {
     title: "Password Saver",
-    desc: "React app with localStorage password management.",
+    desc: "A simple password manager app built with React. Allows users to securely store and manage passwords locally using browser localStorage. Clean UI and easy to use.",
     stack: ["React", "tailwindCSS"],
     img: s6,
     github: "https://github.com/Dilshad-shaik-14/react_password",
