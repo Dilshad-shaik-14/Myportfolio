@@ -58,7 +58,7 @@ export default function Projects() {
   return (
     <section
       id="projects"
-      className="relative z-10 px-4 sm:px-6 md:px-16 pt-24 pb-32 bg-gradient-to-br from-white to-gray-100 dark:from-black dark:to-neutral-900 text-black dark:text-white"
+      className="relative z-10 px-4 sm:px-6 md:px-16 pt-24 pb-32 "
     >
       <motion.h2
         initial={{ opacity: 0, y: 40 }}
@@ -66,7 +66,7 @@ export default function Projects() {
         transition={{ duration: 0.8 }}
         className="text-3xl sm:text-4xl font-extrabold mb-20 text-center"
       >
-        🚀 Projects
+         Projects
       </motion.h2>
 
       <div className="grid grid-cols-1 sm:grid-cols-2 xl:grid-cols-3 gap-10 md:gap-12">

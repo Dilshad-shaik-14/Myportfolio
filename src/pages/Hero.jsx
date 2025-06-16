@@ -9,57 +9,71 @@ export default function Hero() {
     <section
       id="Home"
       className="pt-24 min-h-screen flex flex-col-reverse md:flex-row items-center justify-center px-6 md:px-16 py-12 
-      bg-gradient-to-br from-white to-gray-200 dark:from-black dark:to-neutral-900 
-      text-black dark:text-white transition-colors duration-500 overflow-hidden gap-10"
+       overflow-hidden gap-10"
     >
       {/* Hero Content */}
-      <motion.div
-        className="z-10 backdrop-blur-xl bg-white/40 dark:bg-white/10 p-6 md:p-8 rounded-2xl shadow-2xl text-center md:text-left w-full md:w-1/2 border border-white/30 dark:border-white/10 transition-all duration-300"
-        initial={{ opacity: 0, x: 40 }}
-        animate={{ opacity: 1, x: 0 }}
-        transition={{ duration: 1 }}
-      >
-        <h1 className="text-3xl sm:text-4xl md:text-5xl lg:text-6xl font-extrabold mb-4 leading-tight">
-          Hi, I'm Dilshad Shaik
-        </h1>
+<motion.div
+  className="relative z-10 w-full md:w-1/2 p-6 md:p-10 rounded-3xl text-center md:text-left
+             border border-white/20 dark:border-white/10 
+             backdrop-blur-3xl bg-white/10 dark:bg-white/5
+             shadow-[0_30px_60px_-15px_rgba(0,0,0,0.4)]
+             transition-all duration-500 group overflow-hidden"
+  initial={{ opacity: 0, x: 40 }}
+  animate={{ opacity: 1, x: 0 }}
+  transition={{ duration: 1 }}
+>
+  {/* Glowing layered gradient rings */}
+  <div className="absolute -inset-1 bg-gradient-to-br from-[#ffffff22] to-[#ffffff05] rounded-3xl blur-2xl opacity-60 group-hover:opacity-80 transition duration-700 pointer-events-none" />
+  
+  {/* Optional glowing border effect */}
+  <div className="absolute inset-0 rounded-3xl ring-1 ring-white/20 group-hover:ring-white/30 transition-all duration-500 pointer-events-none" />
 
-        <TypeAnimation
-          sequence={[
-            "Full-Stack Developer",
-            2000,
-            "MERN Stack Enthusiast",
-            2000,
-            "Open Source Contributor",
-            2000,
-            "Tech Explorer",
-            2000,
-            "AI Enthusiast",
-            2000,
-          ]}
-          wrapper="span"
-          speed={50}
-          className="text-lg sm:text-xl md:text-2xl font-semibold text-black/70 dark:text-white/70"
-          repeat={Infinity}
-        />
+  {/* Text Section */}
+  <h1 className="relative text-4xl sm:text-5xl md:text-6xl font-extrabold mb-4 leading-tight text-white drop-shadow-md">
+    Hi, I'm Dilshad Shaik
+  </h1>
 
-        <p className="mt-6 text-black/60 dark:text-white/60 text-base sm:text-lg">
-          I create robust web experiences using clean code and sharp UI/UX.
-          Passionate about building scalable applications and contributing to open-source projects.
-        </p>
+  <TypeAnimation
+    sequence={[
+      "Full-Stack Developer",
+      2000,
+      "MERN Stack Enthusiast",
+      2000,
+      "Open Source Contributor",
+      2000,
+      "Tech Explorer",
+      2000,
+      "AI Enthusiast",
+      2000,
+    ]}
+    wrapper="span"
+    speed={50}
+    className="relative text-lg sm:text-xl md:text-2xl font-semibold text-white/80"
+    repeat={Infinity}
+  />
 
-        <div className="mt-8">
-          <a
-            href="/DilshadShaik_Resume.pdf"
-            download="DilshadShaik_Resume.pdf"
-            target="_blank"
-            rel="noopener noreferrer"
-            className="inline-flex items-center gap-2 px-6 py-3 text-sm sm:text-base border border-white/40 dark:border-white/20 rounded-full font-semibold text-white 
-            backdrop-blur-md bg-black/10 dark:bg-white/10 hover:bg-white hover:text-black transition-all duration-300"
-          >
-            <FaDownload /> Download Resume
-          </a>
-        </div>
-      </motion.div>
+  <p className="relative mt-6 text-white/70 text-base sm:text-lg leading-relaxed">
+    I create robust web experiences using clean code and sharp UI/UX.
+    Passionate about building scalable applications and contributing to open-source projects.
+  </p>
+
+  {/* Download Resume Button */}
+  <div className="relative mt-8">
+    <a
+      href="/DilshadShaik_Resume.pdf"
+      download="DilshadShaik_Resume.pdf"
+      target="_blank"
+      rel="noopener noreferrer"
+      className="inline-flex items-center gap-2 px-6 py-3 text-sm sm:text-base rounded-full font-semibold
+                 text-black bg-white hover:bg-gray-100 dark:text-white dark:bg-white/10 dark:hover:bg-white/20
+                 border border-white/30 backdrop-blur-md shadow-md transition-all duration-300"
+    >
+      <FaDownload className="text-lg" /> Download Resume
+    </a>
+  </div>
+</motion.div>
+
+
 
       {/* Lottie Animation */}
       <motion.div

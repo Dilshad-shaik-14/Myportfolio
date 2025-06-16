@@ -38,7 +38,7 @@ export default function Contact() {
   return (
     <section
       id="Contact"
-      className="min-h-screen py-24 px-4 sm:px-8 md:px-16 bg-gradient-to-br from-white to-gray-100 dark:from-black dark:to-neutral-900 transition-colors duration-500"
+      className="min-h-screen py-24 px-4 sm:px-8 md:px-16 "
     >
       <Toaster position="top-center" />
       <motion.div

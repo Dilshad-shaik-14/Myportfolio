@@ -5,8 +5,7 @@ export default function About() {
     <section
       id="about"
       className="pt-24 min-h-screen flex items-center justify-center px-4 sm:px-8 md:px-16 py-12 
-      bg-gradient-to-br from-white to-gray-200 dark:from-black dark:to-neutral-900 
-      text-black dark:text-white transition-colors duration-500 overflow-hidden"
+       overflow-hidden"
     >
       <div className="max-w-6xl w-full">
         {/* Heading */}

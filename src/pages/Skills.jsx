@@ -35,7 +35,7 @@ export default function Skills() {
   return (
     <section
       id="skills"
-      className="min-h-screen pt-24 pb-20 px-4 sm:px-6 md:px-16 bg-gradient-to-br from-white to-gray-200 dark:from-black dark:to-neutral-900 text-black dark:text-white"
+      className="min-h-screen pt-32 pb-20 px-4 sm:px-8 md:px-16"
     >
       <motion.div
         initial={{ opacity: 0, y: 40 }}
@@ -45,7 +45,7 @@ export default function Skills() {
         className="max-w-7xl mx-auto text-center"
       >
         <h2 className="text-3xl sm:text-4xl md:text-5xl font-bold mb-12">
-          🚀 My Skills
+          My Skills
         </h2>
 
         <div className="grid grid-cols-2 sm:grid-cols-3 md:grid-cols-4 xl:grid-cols-5 gap-4 sm:gap-6 md:gap-8">
