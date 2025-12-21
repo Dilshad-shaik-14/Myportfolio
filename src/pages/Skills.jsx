@@ -1,11 +1,14 @@
 import { motion } from "framer-motion";
 import {
   FaReact, FaHtml5, FaCss3Alt, FaNodeJs, FaPython, FaJava, FaDatabase, FaGitAlt,
+  FaGithub,FaMicrosoft
 } from "react-icons/fa";
 import {
   SiTailwindcss, SiMongodb, SiExpress, SiRedux, SiJavascript,
   SiAppwrite, SiNumpy, SiPandas, SiFramer, SiVercel, SiPostman, SiC, SiCplusplus,
+  SiMysql,
 } from "react-icons/si";
+
 
 const skills = [
   { icon: <FaReact size={24} />, label: "React", color: "from-cyan-500 to-blue-600" },
@@ -25,10 +28,12 @@ const skills = [
   { icon: <SiVercel size={24} />, label: "Vercel", color: "from-black to-gray-800" },
   { icon: <FaPython size={24} />, label: "Python", color: "from-blue-500 to-yellow-400" },
   { icon: <FaJava size={24} />, label: "Java", color: "from-red-600 to-orange-500" },
-  { icon: <FaDatabase size={24} />, label: "SQL", color: "from-blue-600 to-blue-800" },
   { icon: <SiRedux size={24} />, label: "Redux Toolkit", color: "from-purple-600 to-violet-500" },
   { icon: <SiC size={24} />, label: "C", color: "from-sky-600 to-blue-700" },
   { icon: <SiCplusplus size={24} />, label: "C++", color: "from-indigo-600 to-purple-700" },
+  { icon: <FaGithub size={24} />, label: "GitHub", color: "from-gray-800 to-black" },
+  { icon: <FaMicrosoft size={24} />, label: "Power BI", color: "from-yellow-500 to-yellow-700" },
+  { icon: <SiMysql size={24} />, label: "MySQL", color: "from-blue-700 to-blue-900" },
 ];
 
 export default function Skills() {

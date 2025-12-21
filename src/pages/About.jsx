@@ -37,6 +37,9 @@ export default function About() {
             <span className="font-semibold text-sky-600 dark:text-sky-400">
               open-source contributor
             </span>
+            <span>
+               , Focused on extracting meaningful insights from data using analytical thinking and modern data tools.
+            </span>
             , I’m always exploring new tech to push boundaries and innovate.
           </p>
 

@@ -36,6 +36,8 @@ export default function Hero() {
             "Open Source Contributor", 2000,
             "Tech Explorer", 2000,
             "AI Enthusiast", 2000,
+            "Aspiring Data Analyst", 2000,
+            
           ]}
           wrapper="span"
           speed={50}
@@ -45,7 +47,8 @@ export default function Hero() {
 
         <p className="relative mt-6 text-white/80 text-base sm:text-lg leading-relaxed max-w-2xl">
           I craft high-performance web experiences with pixel-perfect UI and clean backend logic.
-          Passionate about scalable systems, open-source collaboration, and building meaningful tools.
+          Passionate about building scalable systems, writing maintainable code, and solving real-world problems.
+          Continuously learning and adapting to modern technologies to deliver impactful, user-centric solutions.
         </p>
 
         <div className="relative mt-8">

@@ -13,6 +13,7 @@ const projects = [
     desc: "A full-featured MERN social platform combining video sharing and microblogging. Users can tweet, upload videos, create playlists, and interact in real time with likes and comments. Includes JWT authentication and a modern UI.",
     stack: ["React", "Node.js", "Express", "MongoDB", "JWT"],
     img: s5,
+    live: "https://dsapp-five.vercel.app/",
     github: "https://github.com/Dilshad-shaik-14/backend_01",
   },
   {
