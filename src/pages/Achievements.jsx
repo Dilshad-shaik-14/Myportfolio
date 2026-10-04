@@ -6,7 +6,6 @@ import {
   FaAward,
   FaExternalLinkAlt,
   FaFilePdf,
-  FaTimes,
 } from "react-icons/fa";
 import leetcode100Badge from "../assets/100days badge.png";
 import leetcode50Badge from "../assets/50 days badge.png";
@@ -247,7 +246,6 @@ const categories = [
 export default function Achievements() {
   const [category, setCategory] = useState("All");
   const [activeIndex, setActiveIndex] = useState(0);
-  const [detailsOpen, setDetailsOpen] = useState(false);
   const filteredAchievements = achievements.filter(
     (achievement) => category === "All" || achievement.category === category
   );
@@ -315,7 +313,7 @@ export default function Achievements() {
 
         <div className="mx-auto grid max-w-7xl gap-5 lg:grid-cols-[minmax(0,1.2fr)_minmax(18rem,0.8fr)] lg:items-center lg:gap-10">
           <div className="min-w-0">
-            <div className="relative mx-auto h-[15rem] w-full max-w-5xl sm:h-[18rem]">
+            <div className="relative mx-auto h-[15rem] w-full max-w-5xl overflow-hidden sm:h-[18rem]">
               <div className="absolute inset-0 [perspective:1200px]">
             {carouselOffsets.map((offset) => {
               const index =
@@ -329,7 +327,7 @@ export default function Achievements() {
                   key={achievement.id}
                   initial={false}
                   animate={{
-                    x: `${offset * 74}%`,
+                    x: `${offset * 100}%`,
                     scale: isActive ? 1 : 0.8,
                     rotateY: offset * -18,
                     opacity: isActive ? 1 : 0.5,
@@ -397,7 +395,6 @@ export default function Achievements() {
                     aria-current={isActive ? "true" : undefined}
                     onClick={() => {
                       setActiveIndex(index);
-                      setDetailsOpen(true);
                     }}
                     className="absolute inset-0 z-10 cursor-pointer"
                   />
@@ -441,7 +438,7 @@ export default function Achievements() {
             animate={{ opacity: 1, y: 0 }}
             exit={{ opacity: 0, y: -8 }}
             transition={{ duration: 0.35, ease: "easeOut" }}
-            className="hidden content-center gap-4 border-t border-white/15 pt-4 lg:grid lg:border-l lg:border-t-0 lg:pl-8 lg:pt-0"
+            className="grid content-start gap-4 border-t border-white/15 pt-4 lg:content-center lg:border-l lg:border-t-0 lg:pl-8 lg:pt-0"
           >
             <div>
               <p
@@ -482,80 +479,6 @@ export default function Achievements() {
               </a>
             )}
           </Motion.article>
-        </AnimatePresence>
-        <AnimatePresence>
-          {detailsOpen && (
-            <Motion.div
-              initial={{ opacity: 0 }}
-              animate={{ opacity: 1 }}
-              exit={{ opacity: 0 }}
-              className="fixed inset-0 z-[60] flex items-center justify-center bg-black/80 p-4 backdrop-blur-sm lg:hidden"
-              onClick={(event) => {
-                if (event.target === event.currentTarget) setDetailsOpen(false);
-              }}
-            >
-              <Motion.section
-                role="dialog"
-                aria-modal="true"
-                aria-labelledby="achievement-dialog-title"
-                initial={{ opacity: 0, y: 18, scale: 0.98 }}
-                animate={{ opacity: 1, y: 0, scale: 1 }}
-                exit={{ opacity: 0, y: 10, scale: 0.98 }}
-                transition={{ duration: 0.22, ease: "easeOut" }}
-                className="max-h-[88dvh] w-full max-w-lg overflow-y-auto border border-white/15 bg-[#151514] p-5 shadow-2xl sm:p-7"
-              >
-                <div className="mb-5 flex items-start justify-between gap-4">
-                  <div>
-                    <p className="mb-2 text-xs font-semibold uppercase tracking-[0.16em] text-amber-300">
-                      {selected.category} · {selected.year}
-                    </p>
-                    <h3
-                      id="achievement-dialog-title"
-                      className="font-serif text-2xl font-semibold leading-tight text-white"
-                    >
-                      {selected.title}
-                    </h3>
-                    <p className="mt-2 text-sm text-white/50">
-                      {selected.issuer}
-                    </p>
-                  </div>
-                  <button
-                    type="button"
-                    onClick={() => setDetailsOpen(false)}
-                    aria-label="Close achievement details"
-                    className="flex h-10 w-10 shrink-0 items-center justify-center border border-white/20 text-white/70 transition hover:border-white/50 hover:text-white"
-                  >
-                    <FaTimes aria-hidden="true" />
-                  </button>
-                </div>
-                <p className="text-sm leading-6 text-white/80">
-                  {selected.detail}
-                </p>
-                <ul className="mt-4 space-y-3">
-                  {selected.highlights.map((highlight) => (
-                    <li
-                      key={highlight}
-                      className="flex gap-3 text-sm leading-6 text-white/65"
-                    >
-                      <span className="mt-2 h-1.5 w-1.5 shrink-0 rounded-full bg-amber-300" />
-                      {highlight}
-                    </li>
-                  ))}
-                </ul>
-                {(selected.document || selected.image) && (
-                  <a
-                    href={selected.document || selected.image}
-                    target="_blank"
-                    rel="noreferrer"
-                    className="mt-5 inline-flex items-center gap-2 text-sm text-amber-200 transition hover:text-amber-100"
-                  >
-                    Open original {selected.document ? "certificate" : "image"}
-                    <FaExternalLinkAlt aria-hidden="true" />
-                  </a>
-                )}
-              </Motion.section>
-            </Motion.div>
-          )}
         </AnimatePresence>
         </div>
       </div>
