@@ -6,6 +6,7 @@ import {
   FaAward,
   FaExternalLinkAlt,
   FaFilePdf,
+  FaTimes,
 } from "react-icons/fa";
 import leetcode100Badge from "../assets/100days badge.png";
 import leetcode50Badge from "../assets/50 days badge.png";
@@ -246,6 +247,7 @@ const categories = [
 export default function Achievements() {
   const [category, setCategory] = useState("All");
   const [activeIndex, setActiveIndex] = useState(0);
+  const [detailsOpen, setDetailsOpen] = useState(false);
   const filteredAchievements = achievements.filter(
     (achievement) => category === "All" || achievement.category === category
   );
@@ -273,12 +275,12 @@ export default function Achievements() {
   return (
     <section
       id="achievements"
-      className="relative scroll-mt-24 overflow-hidden px-4 pb-28 pt-24 text-white sm:px-8 lg:px-12"
+      className="relative scroll-mt-24 overflow-hidden px-4 pb-16 pt-20 text-white sm:px-8 lg:px-12"
     >
       <div className="pointer-events-none absolute left-1/2 top-40 -z-10 h-80 w-[min(80vw,56rem)] -translate-x-1/2 rounded-full bg-amber-500/10 blur-[100px]" />
 
       <div className="mx-auto max-w-7xl">
-        <div className="mb-10 flex flex-col gap-6 md:flex-row md:items-end md:justify-between">
+        <div className="mb-6 flex flex-col gap-4 md:flex-row md:items-end md:justify-between">
           <div>
             <p className="mb-3 flex items-center gap-2 text-xs font-semibold uppercase tracking-[0.22em] text-amber-300">
               <FaAward aria-hidden="true" /> Selected work & recognition
@@ -311,8 +313,10 @@ export default function Achievements() {
           </div>
         </div>
 
-        <div className="relative mx-auto h-[23rem] w-full max-w-5xl sm:h-[27rem]">
-          <div className="absolute inset-0 [perspective:1200px]">
+        <div className="mx-auto grid max-w-7xl gap-5 lg:grid-cols-[minmax(0,1.2fr)_minmax(18rem,0.8fr)] lg:items-center lg:gap-10">
+          <div className="min-w-0">
+            <div className="relative mx-auto h-[15rem] w-full max-w-5xl sm:h-[18rem]">
+              <div className="absolute inset-0 [perspective:1200px]">
             {carouselOffsets.map((offset) => {
               const index =
                 (activeIndex + offset + filteredAchievements.length) %
@@ -342,7 +346,7 @@ export default function Achievements() {
                     transformStyle: "preserve-3d",
                     backfaceVisibility: "hidden",
                   }}
-                  className="absolute left-1/2 top-1/2 h-[21rem] w-[min(76vw,31rem)] -translate-x-1/2 -translate-y-1/2 overflow-hidden border border-white/10 bg-neutral-950 shadow-[0_25px_90px_rgba(0,0,0,0.42)] sm:h-[24rem]"
+                  className="absolute left-1/2 top-1/2 h-[14rem] w-[min(76vw,31rem)] -translate-x-1/2 -translate-y-1/2 overflow-hidden border border-white/10 bg-neutral-950 shadow-[0_25px_90px_rgba(0,0,0,0.42)] sm:h-[17rem]"
                 >
                   {achievement.image ? (
                     <img
@@ -391,40 +395,44 @@ export default function Achievements() {
                     type="button"
                     aria-label={`Show details for ${achievement.title}`}
                     aria-current={isActive ? "true" : undefined}
-                    onClick={() => setActiveIndex(index)}
+                    onClick={() => {
+                      setActiveIndex(index);
+                      setDetailsOpen(true);
+                    }}
                     className="absolute inset-0 z-10 cursor-pointer"
                   />
                 </Motion.div>
               );
             })}
-          </div>
-        </div>
+              </div>
+            </div>
 
-        <div className="mx-auto mt-1 flex max-w-5xl items-center justify-between">
-          <button
-            type="button"
-            onClick={() => move(-1)}
-            title="Previous achievement"
-            aria-label="Previous achievement"
-            className="flex h-11 w-11 items-center justify-center border border-white/20 text-white transition hover:border-amber-300 hover:text-amber-200"
-          >
-            <FaArrowLeft aria-hidden="true" />
-          </button>
-          <p className="text-xs tabular-nums text-white/55 sm:text-sm">
-            <span className="text-white">{activeIndex + 1}</span>
-            <span className="px-2">/</span>
-            {filteredAchievements.length}
-          </p>
-          <button
-            type="button"
-            onClick={() => move(1)}
-            title="Next achievement"
-            aria-label="Next achievement"
-            className="flex h-11 w-11 items-center justify-center border border-white/20 text-white transition hover:border-amber-300 hover:text-amber-200"
-          >
-            <FaArrowRight aria-hidden="true" />
-          </button>
-        </div>
+            <div className="mx-auto mt-1 flex max-w-5xl items-center justify-between">
+              <button
+                type="button"
+                onClick={() => move(-1)}
+                title="Previous achievement"
+                aria-label="Previous achievement"
+                className="flex h-10 w-10 items-center justify-center border border-white/20 text-white transition hover:border-amber-300 hover:text-amber-200"
+              >
+                <FaArrowLeft aria-hidden="true" />
+              </button>
+              <p className="text-xs tabular-nums text-white/55 sm:text-sm">
+                <span className="text-white">{activeIndex + 1}</span>
+                <span className="px-2">/</span>
+                {filteredAchievements.length}
+              </p>
+              <button
+                type="button"
+                onClick={() => move(1)}
+                title="Next achievement"
+                aria-label="Next achievement"
+                className="flex h-10 w-10 items-center justify-center border border-white/20 text-white transition hover:border-amber-300 hover:text-amber-200"
+              >
+                <FaArrowRight aria-hidden="true" />
+              </button>
+            </div>
+          </div>
 
         <AnimatePresence mode="wait">
           <Motion.article
@@ -433,71 +441,123 @@ export default function Achievements() {
             animate={{ opacity: 1, y: 0 }}
             exit={{ opacity: 0, y: -8 }}
             transition={{ duration: 0.35, ease: "easeOut" }}
-            className="mx-auto mt-12 grid max-w-5xl gap-8 border-t border-white/15 pt-8 md:grid-cols-[minmax(0,0.8fr)_minmax(0,1.2fr)] md:gap-14"
+            className="hidden content-center gap-4 border-t border-white/15 pt-4 lg:grid lg:border-l lg:border-t-0 lg:pl-8 lg:pt-0"
           >
             <div>
               <p
                 className="mb-3 text-xs font-semibold uppercase tracking-[0.2em]"
-                style={{ color: selected.accent }}
               >
                 {selected.category} · {selected.year}
               </p>
-              <h3 className="font-serif text-2xl font-semibold leading-tight sm:text-3xl">
+              <h3 className="font-serif text-xl font-semibold leading-tight sm:text-2xl">
                 {selected.title}
               </h3>
               <p className="mt-2 text-sm text-white/50">{selected.issuer}</p>
             </div>
             <div>
-              <p className="text-sm leading-7 text-white/75 sm:text-base">
+              <p className="text-sm leading-6 text-white/75">
                 {selected.detail}
               </p>
-              <ul className="mt-5 space-y-3">
+              <ul className="mt-3 space-y-2">
                 {selected.highlights.map((highlight) => (
                   <li
                     key={highlight}
-                    className="flex gap-3 text-sm leading-6 text-white/65"
+                    className="flex gap-3 text-xs leading-5 text-white/65 sm:text-sm"
                   >
-                    <span
-                      className="mt-2 h-1.5 w-1.5 shrink-0 rounded-full"
-                      style={{ backgroundColor: selected.accent }}
-                    />
+                    <span className="mt-2 h-1.5 w-1.5 shrink-0 rounded-full bg-amber-300" />
                     {highlight}
                   </li>
                 ))}
               </ul>
             </div>
             {(selected.document || selected.image) && (
-              <div className="md:col-span-2">
-                <div className="mb-3 flex items-center justify-between gap-4">
-                  <p className="text-xs font-semibold uppercase text-white/55">
-                    Original uploaded file
-                  </p>
+              <a
+                href={selected.document || selected.image}
+                target="_blank"
+                rel="noreferrer"
+                className="inline-flex items-center gap-2 text-sm text-amber-200 transition hover:text-amber-100"
+              >
+                Open original {selected.document ? "certificate" : "image"}
+                <FaExternalLinkAlt aria-hidden="true" />
+              </a>
+            )}
+          </Motion.article>
+        </AnimatePresence>
+        <AnimatePresence>
+          {detailsOpen && (
+            <Motion.div
+              initial={{ opacity: 0 }}
+              animate={{ opacity: 1 }}
+              exit={{ opacity: 0 }}
+              className="fixed inset-0 z-[60] flex items-center justify-center bg-black/80 p-4 backdrop-blur-sm lg:hidden"
+              onClick={(event) => {
+                if (event.target === event.currentTarget) setDetailsOpen(false);
+              }}
+            >
+              <Motion.section
+                role="dialog"
+                aria-modal="true"
+                aria-labelledby="achievement-dialog-title"
+                initial={{ opacity: 0, y: 18, scale: 0.98 }}
+                animate={{ opacity: 1, y: 0, scale: 1 }}
+                exit={{ opacity: 0, y: 10, scale: 0.98 }}
+                transition={{ duration: 0.22, ease: "easeOut" }}
+                className="max-h-[88dvh] w-full max-w-lg overflow-y-auto border border-white/15 bg-[#151514] p-5 shadow-2xl sm:p-7"
+              >
+                <div className="mb-5 flex items-start justify-between gap-4">
+                  <div>
+                    <p className="mb-2 text-xs font-semibold uppercase tracking-[0.16em] text-amber-300">
+                      {selected.category} · {selected.year}
+                    </p>
+                    <h3
+                      id="achievement-dialog-title"
+                      className="font-serif text-2xl font-semibold leading-tight text-white"
+                    >
+                      {selected.title}
+                    </h3>
+                    <p className="mt-2 text-sm text-white/50">
+                      {selected.issuer}
+                    </p>
+                  </div>
+                  <button
+                    type="button"
+                    onClick={() => setDetailsOpen(false)}
+                    aria-label="Close achievement details"
+                    className="flex h-10 w-10 shrink-0 items-center justify-center border border-white/20 text-white/70 transition hover:border-white/50 hover:text-white"
+                  >
+                    <FaTimes aria-hidden="true" />
+                  </button>
+                </div>
+                <p className="text-sm leading-6 text-white/80">
+                  {selected.detail}
+                </p>
+                <ul className="mt-4 space-y-3">
+                  {selected.highlights.map((highlight) => (
+                    <li
+                      key={highlight}
+                      className="flex gap-3 text-sm leading-6 text-white/65"
+                    >
+                      <span className="mt-2 h-1.5 w-1.5 shrink-0 rounded-full bg-amber-300" />
+                      {highlight}
+                    </li>
+                  ))}
+                </ul>
+                {(selected.document || selected.image) && (
                   <a
                     href={selected.document || selected.image}
                     target="_blank"
                     rel="noreferrer"
-                    className="inline-flex items-center gap-2 text-sm text-amber-200 transition hover:text-amber-100"
+                    className="mt-5 inline-flex items-center gap-2 text-sm text-amber-200 transition hover:text-amber-100"
                   >
-                    Open original <FaExternalLinkAlt aria-hidden="true" />
+                    Open original {selected.document ? "certificate" : "image"}
+                    <FaExternalLinkAlt aria-hidden="true" />
                   </a>
-                </div>
-                {selected.document ? (
-                  <iframe
-                    src={`${selected.document}#toolbar=0&navpanes=0&view=FitH`}
-                    title={`Original document: ${selected.title}`}
-                    className="h-[min(75vh,54rem)] min-h-[28rem] w-full border border-white/15 bg-white"
-                  />
-                ) : (
-                  <img
-                    src={selected.image}
-                    alt={selected.title}
-                    className="max-h-[75vh] w-full border border-white/15 bg-black/20 object-contain"
-                  />
                 )}
-              </div>
-            )}
-          </Motion.article>
+              </Motion.section>
+            </Motion.div>
+          )}
         </AnimatePresence>
+        </div>
       </div>
     </section>
   );
