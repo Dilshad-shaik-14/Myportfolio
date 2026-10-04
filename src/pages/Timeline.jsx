@@ -75,6 +75,30 @@ export default function TimelinePage() {
           "Submitted a proposal for Google Summer of Code, suggesting UI/UX improvements for Volto (Plone Foundation). Ranked in the top 10% of applicants.",
         icon: <FaGoogle className="text-red-500 w-5 h-5" aria-label="google" />,
       },
+      {
+        year: "2025",
+        event: "Expanding into AI & Full-Stack Engineering",
+        description:
+          "Expanded my engineering journey through full-stack development, AI automation, and open-source work. Built applications using React, Node.js, Express, and MongoDB, developed AI-powered automation workflows and intelligent agents, and submitted a GSoC proposal to the Plone Foundation focused on improving Volto's UI/UX.",
+        icon: (
+          <FaProjectDiagram
+            className="text-cyan-500 w-5 h-5"
+            aria-label="AI and full stack development"
+          />
+        ),
+      },
+      {
+        year: "2026",
+        event: "Research in Robust & Generalizable AI",
+        description:
+          "Conducted research on shortcut learning and cross-dataset domain shift in lightweight CNNs for tomato disease classification. Evaluated ShuffleNetV2, MobileNetV3-Small, and ResNet18 using PyTorch, Grad-CAM, masking interventions, and a Background Attention Ratio metric to investigate whether models learned disease-relevant features or dataset-specific background artifacts.",
+        icon: (
+          <FaCertificate
+            className="text-violet-500 w-5 h-5"
+            aria-label="research"
+          />
+        ),
+      },
     ],
     []
   );

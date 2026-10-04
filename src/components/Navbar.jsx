@@ -1,7 +1,16 @@
 import { useEffect, useState } from "react";
 import { Link } from "react-scroll";
 import { motion } from "framer-motion";
-import { FaHome, FaUserAlt, FaTools, FaProjectDiagram, FaClock, FaGithub, FaEnvelope } from "react-icons/fa";
+import {
+  FaHome,
+  FaUserAlt,
+  FaTools,
+  FaProjectDiagram,
+  FaClock,
+  FaAward,
+  FaGithub,
+  FaEnvelope,
+} from "react-icons/fa";
 
 export default function Navbar() {
   const [isScrolled, setIsScrolled] = useState(false);
@@ -20,6 +29,7 @@ export default function Navbar() {
     { id: "skills", icon: <FaTools />, label: "Skills" },
     { id: "projects", icon: <FaProjectDiagram />, label: "Projects" },
     { id: "timeline", icon: <FaClock />, label: "Timeline" },
+    { id: "achievements", icon: <FaAward />, label: "Achievements" },
     { id: "github", icon: <FaGithub />, label: "GitHub" },
     { id: "contact", icon: <FaEnvelope />, label: "Contact" },
   ];

@@ -5,11 +5,20 @@ import s3 from "../assets/s3.png";
 import s4 from "../assets/s4.png";
 import s5 from "../assets/s5.png";
 import s6 from "../assets/s6.png";
+import s7 from "../assets/s7.png";
 import React from "react";
 
 const projects = [
   {
-    title: "YouTube+Twitter Hybrid App",
+    title: "NightLamp",
+    desc: "AI-powered production-failure diagnosis. Takes a live URL, a GitHub repository and error logs, and returns a red / yellow / green health report with fix steps.",
+    stack: ["React", "Node.js", "Express", "OpenAI API"], 
+    img: s7,
+    live: "https://night-lamp-one.vercel.app/",
+    github: "https://github.com/Dilshad-shaik-14/NightLamp"
+  },
+  {
+    title: "DS ClipIt SaveIt",
     desc: "A full-featured MERN social platform combining video sharing and microblogging. Users can tweet, upload videos, create playlists, and interact in real time with likes and comments. Includes JWT authentication and a modern UI.",
     stack: ["React", "Node.js", "Express", "MongoDB", "JWT"],
     img: s5,
@@ -19,7 +28,7 @@ const projects = [
   {
     title: "Cronicle Cave App",
     desc: "A CRUD web app for managing and filtering content, built with React and Express. Features secure authentication, content filtering, and a responsive dashboard. Data is stored in MongoDB for scalability.",
-    stack: ["React", "Express", "MongoDB"],
+    stack: ["React", "Appwrite", "Tailwindcss"],
     img: s1,
     live: "https://full-stack-01.vercel.app",
     github: "https://github.com/Dilshad-shaik-14/FullStack_01",

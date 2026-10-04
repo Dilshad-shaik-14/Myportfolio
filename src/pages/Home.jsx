@@ -3,6 +3,7 @@ import About from "./About";
 import Skills from "./Skills";
 import Projects from "./Projects";
 import Timeline from "./Timeline";
+import Achievements from "./Achievements";
 import Github from "./Github";
 import Contact from "./Contact"; // <-- This is your advanced form
 
@@ -14,6 +15,7 @@ export default function Home() {
       <section id="skills"><Skills /></section>
       <section id="projects"><Projects /></section>
       <section id="timeline"><Timeline /></section>
+      <section><Achievements /></section>
       <section id="github"><Github /></section>
       <section id="contact"><Contact /></section>
     </main>
